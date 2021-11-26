@@ -1,0 +1,14 @@
+package chartest;
+
+public class Chartest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char c;
+		c = 'A';
+		
+		String word = "´Ü¾î";
+		System.out.println(word);
+	}
+
+}

@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class InputTest02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	
+		Scanner sc = new Scanner(System.in);
+		String s;
+		char C;
+		int count =0;
+		int []Input;
+		int []ABC;
+		
+		System.out.println("πÆ¿Â");
+		s = sc.nextLine();
+		Input = new int[s.length()];
+		
+		for(int i =0; i<s.length(); i++) {
+			Input[i] = s.charAt(i);
+		}
+		
+		for(int i=0; i<Input.length;i++) {
+			if((65<=Input[i]&&Input[i]<91)||(97<=Input[i]&&Input[i]<123)) {
+				for(int x=i; x<Input.length; x++) {
+					for(int y=x; y<Input.length; y++) {
+						if(Input[x]==Input[y]) {
+							
+						}else {
+							count++;
+						}
+					}
+				}
+				System.out.println(Input[i]+" ------> "+count);
+			}
+		}
+		
+		
+	}
+
+}

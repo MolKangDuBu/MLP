@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Test05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		Scanner sc = new Scanner(System.in);
+		final int Kimchi = 5000, meat = 6000, soup = 4000;
+		int k, m,s;
+		System.out.print("±èÄ¡Âî°³? ");
+		k = sc.nextInt();
+		System.out.print("µÈÀåÂî°³? ");
+		m = sc.nextInt();
+		System.out.print("Á¦À°ººÀ½? ");
+		s = sc.nextInt();
+		
+		System.out.println("1ÀÎ´ç ÁöºÒÇÒ ±İ¾× : "+(k*Kimchi+m*meat+s*soup)/5);
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+
+public class Circle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		float radius = 5.0f;
+		float surface = radius*radius*3.14f;
+		System.out.println(surface);
+	}
+
+}

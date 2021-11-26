@@ -1,0 +1,19 @@
+
+public class Test06 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		int car =80;
+		int distance = 430;
+		
+		int h, m, answer;
+		answer = (430/80)*3600;
+		h= answer/60*60;
+		answer = answer%60*60;
+		m = answer/60;
+		
+		System.out.println(h+"½Ã "+m+"ºÐ");
+	}
+
+}

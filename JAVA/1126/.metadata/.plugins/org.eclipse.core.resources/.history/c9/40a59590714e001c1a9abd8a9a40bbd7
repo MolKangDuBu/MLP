@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Test01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Scanner sc = new Scanner(System.in);
+		int student = 5;
+		String name[] = new String[student];
+		int word[] = new int[student];
+		int ppt[] = new int[student];
+		int spread[] = new int[student];
+		int total[] = new int[student];
+		String grades[] = new String[student];
+		
+		int A=0;
+		int B=0;
+		int C=0;
+		int D=0;
+		
+		for(int i=0; i<student; i++) {
+			System.out.print("이름 : ");
+			name[i] = sc.next();
+			System.out.print("워드 점수 : ");
+			word[i] = sc.nextInt();
+			System.out.print("파워포인트 점수 : ");
+			ppt[i] = sc.nextInt();
+			System.out.print("스프레드 점수 : ");
+			spread[i] = sc.nextInt();
+		}
+		
+		for(int i =0; i<student; i++) {
+			total[i] = word[i]+ppt[i]+spread[i];
+			if(total[i]>=800) {
+				grades[i] = "A";
+				A++;
+			}else if(800>total[i]&& total[i]>=600) {
+				grades[i]= "B";
+				B++;
+			}else if(600> total[i]&&total[i]>=400) {
+				grades[i]="C";
+				C++;
+			}else {
+				grades[i]= "D";
+				D++;
+			}
+		}
+		System.out.println("이름\t필기\t워드\t파워포인투\t스프레드\t등급");
+		for(int i =0; i<student; i++) {
+			System.out.println(name[i]+"\t"+word[i]+"\t"+
+					ppt[i]+"\t"+spread[i]+"\t"+grades[i]);
+		}
+		
+		
+		
+		
+	}
+
+}

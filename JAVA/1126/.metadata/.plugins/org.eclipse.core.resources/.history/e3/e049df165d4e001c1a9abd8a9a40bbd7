@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class ArrayTest02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		String name[] = new String[3];
+		int pay[] = new int[3];
+		int worktime[] = new int[3];
+		int base[] = new int[3];
+		int bonus[] = new int[3];
+		int total[] = new int[3];
+		
+		
+		System.out.println("이름, 시간당 금여액, 근무시간을 입력해주세요");
+		
+		for(int i = 0; i<3; i++) {
+			name[i] = sc.next();
+			pay[i] = sc.nextInt();
+			worktime[i] =sc.nextInt();
+		}
+		for(int i =0; i<3;i++) {
+			base[i] = pay[i]*worktime[i];
+			if(worktime[i]>20) {
+				bonus[i] = (int)(pay[i]*0.5)*(worktime[i]-20);
+			}else {
+				bonus[i] = 0;
+			}
+			
+			total[i] = base[i]+bonus[i];
+		}
+		
+		
+		System.out.println("이름\t시간당급여액\t근무시간\t기본급\t수당\t총합");
+		for(int i =0; i<3;i++) {
+			System.out.println(name[i]+"\t"+pay[i]+
+					"\t\t"+worktime[i]+"\t"+base[i]+"\t"+bonus[i]+"\t"+total[i]+"\t");
+		}
+		
+		
+		
+		
+		
+	}
+
+}

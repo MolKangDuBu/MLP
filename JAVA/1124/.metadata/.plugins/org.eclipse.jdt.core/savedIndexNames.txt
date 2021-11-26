@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+C:\Users\itsok\Desktop\MLP full-stack\JAVA\1124\.metadata\.plugins\org.eclipse.jdt.core
+3144651554.index
+1657330681.index
+1865797976.index
+230286539.index
+1570129345.index
+1986686374.index
+2886917930.index

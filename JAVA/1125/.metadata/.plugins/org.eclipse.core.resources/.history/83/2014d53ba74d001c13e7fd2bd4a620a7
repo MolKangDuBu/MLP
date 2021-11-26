@@ -1,0 +1,17 @@
+import java.util.Random;
+
+public class ForTest05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		Random rd = new Random();
+		int num;
+		
+		for(int i=0;i<=20;i++) {
+			System.out.print(rd.nextInt(5)+" ");
+		}
+	}
+
+}

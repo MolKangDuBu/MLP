@@ -1,0 +1,18 @@
+
+public class CastingTest02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		String s1 = "12";
+		String s2 = "34";
+		
+		String result;
+		
+		result = s1+s2;
+		
+		System.out.println(result);
+	}
+
+}

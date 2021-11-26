@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Test02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		Scanner sc = new Scanner(System.in);
+		int money = sc.nextInt();
+		int a = 50000;
+		int b = 10000;
+		int c = 5000;
+		int d = 1000;
+		int e = 500;
+		int f = 100;
+		int g = 50;
+		int h = 10;
+		
+		a= money/a;
+		money=money%a;
+		
+		b=money/b;
+		money=money%b;
+
+		c=money/c;
+		money=money%c;
+		
+		d=money/d;
+		money=money%d;
+		
+		e=money/e;
+		money=money%e;
+		
+		f=money/f;
+		money=money%f;
+		
+		g=money/g;
+		money=money%g;
+		
+		h=money/h;
+		money=money%h;
+		
+		System.out.println("50000\t-----> "+a+"장");
+		System.out.println("10000\t-----> "+b+"장");
+		System.out.println("5000\t-----> "+c+"장");
+		System.out.println("1000\t-----> "+d+"장");
+		System.out.println("500\t-----> "+e+"장");
+		System.out.println("100\t-----> "+f+"장");
+		System.out.println("50\t-----> "+g+"장");
+		System.out.println("10\t-----> "+h+"장");
+		
+	}
+
+}
