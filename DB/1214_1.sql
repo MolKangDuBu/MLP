@@ -173,3 +173,5 @@ from BOARD b;
 -- 7. MEMBER 테이블의 데이타 전체 건수를 구하는 쿼리를 작성하시오.
 select count(seq)
 from member;
+
+
