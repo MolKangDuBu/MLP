@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        테이블 전체를 중앙으로
+        display: block;margin:auto;
+    -->
+
+    <table style ="width:80%; border: 1px solid green; border-collapse:collapse ;margin: auto;">
+       <colgroup>
+            <col width = "33%"></col>
+            <col width = "33%"></col>
+            <col width = "33%"></col>
+        </colgroup>
+        <thead>
+                <tr>
+                    <th>제목1</th>
+                    <th>제목2</th>
+                    <th>제목3</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+            <tr>
+                <td style="border: 1px solid red;" rowspan="4">1행1열</td>
+                <td style="border: 1px solid red;">1행2열</td>
+                <td style="border: 1px solid red;">1행3열</td>
+            </tr>
+            <tr>
+                
+                <td style="border: 1px solid red;">2행2열</td>
+                <td style="border: 1px solid red;">2행3열</td>
+            </tr>
+            <tr>
+                
+                <td style="border: 1px solid red;">3행2열</td>
+                <td style="border: 1px solid red;">3행3열</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid red;">4행1열</td>
+                <td style="border: 1px solid red;">4행2열</td>
+                <td style="border: 1px solid red;">4행3열</td>
+            </tr>
+        </table>
+
+    </tbody>
+</body>
+</html>
