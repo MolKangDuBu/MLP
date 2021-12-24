@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.city {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<!-- css를 사용하려면 같은 페이지에 동일한 ID가 있어도 상관없음
+자바 스크립트에서 h1태그에 접근할때 동일한 ID가 있으면 첫번째 ID만 인식함
+html css는 상관없지만 프로그래밍언어인 자바스크립트나 Jquery에서 ID로 대상을 인식할 경우에
+첫번째 것만 인식
+보통 하나의 html 문서에서는 하나의 ID만 갖는다-->
+<h1 id="myHeader">아이디를 이용한 스타일 적용</h1>
+<h1 id="myHeader">아이디를 이용한 스타일 적용</h1>
+
+<div class="city">
+<h2>London</h2>
+<p>London is the capital of England.</p>
+</div> 
+
+<div class="city">
+<h2>Paris</h2>
+<p>Paris is the capital of France.</p>
+</div>
+
+<div class="city">
+<h2>Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+</div>
+
+</body>
+</html>
+

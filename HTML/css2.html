@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    x: <input type="text" name="" id="x">
+    y: <input type="text" name="" id="y">
+    <button type = "button" onclick="goAdd()">더하기</button>
+    <div id= "result"></div>
+</body>
+</html>
+
+
+<script>
+    function goAdd(){
+        var x =document.getElementById("x").vaule;//입력 방법
+        var y = document.getElementById("y").vaule;
+        var result = parseInt(x)+parseInt(y);
+        document.getElementById("result").innerHTML =result;//print
+    }
+</script>

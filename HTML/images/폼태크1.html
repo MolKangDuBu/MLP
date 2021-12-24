@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input : 데이터를 입력 받아 서버로 보내기 위해 사용
+        속성 : type(text, password, checkbox, radio...)데이터 입력 형식
+               name : 다른 태그에 없음, input 태그만 가능(input, select, textarea)들만 name속성을 갖는다
+               서버로 전달되며 서버에 전달할때 키값/ 
+               name = "username" - username을 키값
+               username = test1 형태로 전달
+        value : 사용자가 입력한 값을 저장할 속성
+        id : 모든 캐그가 다 가질 수 있음. 서버로 보내는 일은 전혀 관계없음
+             자바스크립트에서 사용    
+             
+        모든 input 태그류는 form 태그 사이에 있어야 서버로 정보가 전송됨.    
+        form 태그의 속성
+            action 현재 페이지에서 보낸 정보를 받아서 처리할 페에지
+            method 정보를 전송하는 방식
+                    get - 특별한 제약이 없을 경우 get이 일반적 1000byte이내의 정보만 전송 가능
+                        모든 정보가 url에 공개됨
+                    post - 길이 제한이 없다. 정보가 url에 드러나지않음
+                            회원가입, 게시물 작성 로그온 파일전송 등..
+        서버로 정보를 전송할때 header 정보와 body정보로 나누어서 정보를 전송함
+        header - get
+        
+        header - 사전정보, post방식
+        body 부분이 따라서 전송됨
+
+        가급적 하나의 웹페이지 안에는 하나의 form태그만 갖는다
+        form 태그를 여러게 두고 쓰는 경우도 있긴하다.
+    -->
+    <form method="get">
+        <label for="username">username</label><br>
+        <input type="text" name ="username" id=""><br>
+        <label for="password">Password</label><br>
+        <input type="password" name = "password" id = ""><br>
+        <input type="submit" value="보내기"><!-- submit 버튼을 통해 서버로 정보 전송-->
+        <br>
+     <h1>라디오 : 그룹으로 묶어서 그룹중에 하나를 진행하도록</h1>
+     <p>필연적으로 동일 그룹일때 name속성이 같아야함 </p>
+     <input type="radio" id="html" name="fav_language" value="HTML">
+     <label for="html">HTML</label><br>
+     <input type="radio" id="css" name="fav_language" value="CSS">
+     <label for="css">CSS</label><br>
+     <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+     <label for="javascript">JavaScript</label>
+
+    <br>
+    <h1>과일 선택</h1>
+    <label for="apple">사과</label>
+    <input type="radio" name ="fruit" id ="apple" value="apple">
+    <label for="orange">오렌지</label>
+    <input type="radio" name ="fruit" id ="orange" value="orange">
+    <label for="grape">포도</label>
+    <input type="radio" name ="fruit" id ="grape" value="grape">
+    
+    
+    <h1>좋아하는 과일 선택</h1>
+    <label for="apple2">사과</label>
+    <input type="checkbox" name ="fruit2" id ="apple2" value="apple">
+    <label for="orange2">오렌지</label>
+    <input type="checkbox" name ="fruit2" id ="orange2" value="orange">
+    <label for="grape2">포도</label>
+    <input type="checkbox" name ="fruit2" id ="grape2" value="grape">
+        
+    <h1>Select</h1>
+    <select name="" id="">
+        <option value="1">asdasd</option>
+        <option value="2">Asdasd</option>
+        <option value="3">asDSFasd</option>
+        <option value="4">asdHTDHd</option>
+        <option value="5">asdASDQW</option>
+    </select>
+    
+    <h1>TextArea</h1>
+    <textarea name="contents" id="contents" cols="80" rows="10"></textarea>
+
+
+    <!-- 
+        input type = "submit" 무조건 서버로 전송. 자바스크립트를 거쳐가지않음
+              type = "button" 자바스크립트에서 에러체크가 가능하며 자바스크립트를 이용해 서버로 전송
+              type = "reset" 화면에 있는 모든 입력창을 clear함
+                <button>send</button>   <input type="submit" value = "send"> 같은 태그
+                <button type = "button">send</button>  <input type ="button" value="send"> 같은 태그             
+    -->
+    <br>
+    <input type="submit" value="send1"><br>
+    <input type="button" value="send2"><br> <!--전송안됨-->
+    <button>send3</button><br>
+    <button type="button">send4</button><br><!--전송안됨-->
+    
+</form>
+
+</body>
+</html>

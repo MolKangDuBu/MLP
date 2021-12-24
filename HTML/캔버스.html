@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h3>캔버스- 도화지와 같음</h3>
+        <canvas id="mycanvas" width="300" height="200" style="border: 1px solid green;"></canvas>
+</body>
+</html>
+
+<!-- 자바스크립트 : 브라우저에 별도의 번역기가 있음
+    스크립트 : 독자적인 번역기가 없는 언어에 붙이는 총칭-->
+<script>
+//1. canvas 태그에 대한 참조를 가져와야 한다.
+    var canvas = document.getElementById("mycanvas");
+    var ctx = canvas.getContext("2d");//그림의 모든 요소를 갖고 있음.
+    ctx.moveTo(0,0);
+    ctx.lineTo(300,200);
+    ctx.stroke();
+
+</script>
