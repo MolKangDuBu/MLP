@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+         background-color: bisque;   
+        }
+
+       /* p가 셀렉터 */
+       /* . 은 클래스 */
+       /* # 은 아이디 */
+        /* *은 스타일이 없는 모든것*/
+       p{
+            color:brown;
+            background-color: burlywood;
+            padding: 10px;
+        }
+        p#blue{
+            color:chartreuse;
+        }
+        #blue{
+            color: crimson;
+        }
+
+        .center{
+            text-align: center;
+            color: blue;
+        }
+
+        .large{
+            font-size : 40pt;
+        }
+
+        .background{
+            background-color: cornflowerblue;
+        }
+
+        *{
+            color: darkgoldenrod;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <p class="center large background">ㅎㅇ</p>
+    <p id="blue">ㅎㅇ</p>
+    <p>ㅎㅇ</p>
+
+    <h3 id="blue">Waitting</h3>
+    <h3 class = "center">방아쇠</h3>
+    <h3 class = "center">주마등</h3>
+
+    <h1>아니</h1>
+    <h2>근데</h2>
+</body>
+</html>
+
+<script>
+    // 자바스크립트에서 위에 html d의 모든 요소가 메모리 로딩되어지면 실행됨
+    window.onload=function(){
+        document.getElementById("blue").innerHTML="스웨터";
+    document.getElementsByClassName("center")[0].innerHTML="스우에에터";
+    document.getElementsByClassName("center")[1].innerHTML="스우에에터";
+    }
+    
+</script>

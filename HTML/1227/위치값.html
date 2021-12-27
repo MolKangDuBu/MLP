@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.static {/*기본값이 static 안써도 상관없음*/
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+div.relative {/*원래의 위치(static 위치값)로부터 어느정도 옮길 수 있음*/
+  position: relative;
+  top :20px;
+  left : 40px;
+  border: 3px solid #73AD21;
+}
+
+
+div.fixed {/*위치값 고정*/
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+
+
+div.absolute {/*가까이 있는 조상을 기준으로 위치함.
+                만일 근처에 조상이 없으면 바디 태그를 기준으로 페이지 스크롤과 같이 이동*/
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  background-color:  #73AD21;
+}
+
+</style>
+</head>
+<body>
+
+<h3>div 태그 위치 지정하기</h3>
+
+<div class="static">static 위치 지정하기</div>
+<div class="relative">relative 위치 지정하기</div>
+<div class="relative">relative 위치 지정하기</div>
+<div class="relative">relative 위치 지정하기</div>
+<div class="fixed">fixed 위치 지정하기</div>
+<div class="absolute">absolute 위치 지정하기</div>
+
+</body>
+</html>
+
+

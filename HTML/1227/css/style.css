@@ -1,0 +1,13 @@
+body{
+    /* background-color: rgba(245, 245, 220, 0.247); */
+    background-image: url("../Image/backgroud.jpg");
+    font-size: 11pt;
+}
+
+h1{
+    color: coral;
+}
+
+p{
+    color: bisque;
+}
