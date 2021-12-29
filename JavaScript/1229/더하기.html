@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="nums" id="1" value="1"><br>
+    <input type="text" name="nums" id="2" value="2"><br>
+    <input type="text" name="nums" id="3" value="3"><br>
+    <input type="text" name="nums" id="4" value="4"><br>
+    <input type="text" name="nums" id="5" value="5"><br>
+    <input type="text" name="nums" id="6" value="6"><br>
+    <input type="text" name="nums" id="7" value="7"><br>
+    <input type="text" name="nums" id="8" value="8"><br>
+    <input type="text" name="nums" id="9" value="9"><br>
+    <input type="text" name="nums" id="10" value="10"><br>
+    <hr>
+    <input type="text" name="" id="result"><br>
+    <button type="button" onclick="goCalc()">결과확인</button>
+    <button type="button" onclick="goCalc2()">결과확인</button>
+</body>
+</html>
+
+<script>
+    function goCalc(){
+        var result =0;
+        var i =1;
+        while(i<=10){
+            x = document.getElementById(i).value;
+            result+=parseInt(x);
+            i++;
+        }
+
+        document.getElementById("result").value = result;
+    }
+    function goCalc2(){
+        var result =0;
+        var i =0;
+        while(i<10){
+            x = document.getElementsByName("nums")[i].value;
+            result+=parseInt(x);
+            i++;
+        }
+
+        document.getElementById("result").value = result;
+    }
+</script>

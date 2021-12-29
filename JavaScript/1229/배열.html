@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let flower = ["작약", "백일홍", "천일홍", "목련", "목단", "구철초", "국화"];
+    var i;
+    for(i=0;i<flower.length;i++){
+        console.log(flower[i]);
+    }
+
+    for(i in flower)
+        console.log(i, flower[i]);
+
+    for(item of flower){
+        console.log(item);
+    }    
+
+    var data = {"name":"홍길동", "age":27};
+
+    console.log(data["name"], data["age"]);
+    console.log(data.name, data.age);
+
+
+    var Movie = [
+        {"Title": "스파이더맨", "Actor" : "톰 홀랜드"},
+        {"Title": "호빗", "Actor" : "홀랜드"},
+        {"Title": "ㅁㄴㅇ", "Actor" : "톰 랜드"},
+        {"Title": "ㅁㄴㄹㄴㅇㄹ", "Actor" : "톰 홀랜"}
+    ];
+
+    for(i=0; i<Movie.length;i++)
+        console.log(Movie[i]["Title"], Movie[i]["Actor"]);
+    
+    for(i=0; i<Movie.length;i++)
+        console.log(Movie[i].Title, Movie[i].Actor);
+
+    for(i in Movie)
+        console.log(Movie[i].Title, Movie[i].Actor);
+
+     for(i in Movie)
+        console.log(Movie[i]["Title"], Movie[i]["Actor"]);
+
+     for(item of Movie)
+        console.log(item["Title"], item["Actor"]);
+        
+     for(item of Movie)
+        console.log(item.Title, item.Actor);   
+    
+</script>

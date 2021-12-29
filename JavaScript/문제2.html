@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id = "background">
+    <button type="button" onclick="chageColor('red')">빨강</button> <br>
+    <button type="button" onclick="chageColor('blue')">파랑</button> <br>
+    <button type="button" onclick="chageColor('yellow')">노랑</button> <br>
+    <button type="button" onclick="chageColor('green')">초록</button> <br>
+    <button type="button" onclick="chageColor('gray')">회색</button> <br>
+    <button type="button" onclick="chageColor('white')">흰색</button> <br>
+
+</body>
+
+</html>
+
+<script>
+
+    function chageColor(Color) {
+        switch (Color) {
+            case 'red':
+                document.getElementById("background").style.backgroundColor="#ff0000";
+                break;
+            case 'blue':
+            document.getElementById("background").style.backgroundColor="#0000ff";
+                break;
+            case 'yellow':
+            document.getElementById("background").style.backgroundColor="#ffff00";
+                break;
+            case 'green':
+            document.getElementById("background").style.backgroundColor="#00ff00";
+                break;
+            case 'gray':
+            document.getElementById("background").style.backgroundColor="#aaaaaa";
+                break;
+            case 'white':
+            document.getElementById("background").style.backgroundColor="#ffffff";
+                break;
+
+
+        }
+    }
+</script>

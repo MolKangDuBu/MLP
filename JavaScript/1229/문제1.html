@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="red">빨간색</p>
+    <p id="green">초록색</p>
+    <p id="blue">파란색</p>
+    <p id="black">검은색</p>
+    <p id="gray">회색</p>
+</body>
+</html>
+
+<script>
+    document.getElementById("red").style.backgroundColor = "#ff0000";
+    document.getElementById("green").style.backgroundColor = "#00ff00";
+    document.getElementById("blue").style.backgroundColor = "#0000ff";
+    document.getElementById("black").style.backgroundColor = "#000000";
+    document.getElementById("gray").style.backgroundColor = "#bbbbbb";
+//p 태그안의 text들을 colors에 있는 텍스트로 바꾸자
+
+    document.getElementsByTagName("p")[0].innerHTML = "red";
+    document.getElementsByTagName("p")[1].innerHTML = "blue";
+
+</script>
