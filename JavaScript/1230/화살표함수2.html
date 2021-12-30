@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>화살표 함수</h3>
+    <button class="button" type="button">1</button><br>
+    <button class="button" type="button">2</button><br>
+    <button class="button" type="button">3</button><br>
+    <button class="button" type="button">4</button><br>
+    <button class="button" type="button">5</button><br>
+    <button class="button" type="button">6</button><br>
+</body>
+</html>
+<script>
+    //forEach(출력), filter(데이터를 필터링), map(데이터 가공)
+
+    let array = [3,5,8,6,7];
+    array.forEach((n) => {
+        console.log(n);
+    });
+
+    let btn = document.querySelectorAll("button");
+    btn.forEach((n)=>{
+        console.log(n.innerHTML);
+    })
+</script>

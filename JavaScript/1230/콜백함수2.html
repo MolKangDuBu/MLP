@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>콜백함수연습</h3>
+</body>
+</html>
+<script>
+   
+    function myfunc(callback, x, y){
+        result = callback(x,y);
+        console.log(`${x} ${y} =  ${result}`);;
+    }
+    function add(x,y){
+        return x+y;
+    }
+
+    let sub = function(x,y){
+        return x-y;
+    }
+
+    myfunc(add, 5,4);//함수전달
+    myfunc(sub, 5,4);//함수 표현식 전달
+    myfunc(function(x,y){return x*y}, 5,4);//함수표현식
+    myfunc((x,y)=>x*y, 5,4);//람다식
+
+</script>

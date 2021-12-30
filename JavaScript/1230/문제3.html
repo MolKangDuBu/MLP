@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+   let arr = [1,2,3,4,5,6,7,8,9,10];
+   let result="";
+//     arr.forEach((e)=>{
+//         result =result+e+"<br>";
+//     });
+//     console.log(result);
+//     document.getElementById("result").innerHTML = result;
+
+    let scores=[
+        {name:"홍길동",  kor:90, eng:80, mat:70},
+        {name:"임꺽정", kor:80, eng:80, mat:80},
+        {name:"장길산", kor:70, eng:70, mat:70},
+        {name:"장승업", kor:60, eng:60, mat:70},
+        {name:"김홍도", kor:100, eng:100, mat:90},
+        {name:"신윤복", kor:100, eng:100, mat:100},
+    ];
+
+    scores.forEach((e)=>{
+        result =result+ e.name+" "+e.kor+" "+e.eng+" "+e.mat+"<br>";
+    });
+    document.getElementById("result").innerHTML = result;
+
+    let person= {name:"홍길동",  kor:90, eng:80, mat:70};
+    for([key, entry]of Object.entries(person)){
+        console.log(key, person[key]);
+    }
+
+    result = "";
+    scores.forEach((item)=>{
+        for([key,entry] of Object.entries(person)){
+            result = result+item[key]+"&nbsp;&nbsp";
+        }
+        result = result+"<br>";
+    });
+    document.getElementById("result").innerHTML = result;
+</script>

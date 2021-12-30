@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function callFunction(call){
+        console.log("**********************");
+        call();
+        console.log("**********************");
+    }
+
+    function display(){
+        console.log("callback 함수");
+    }
+
+    function gugudan(){
+        for(i=1; i<10;i++){
+            console.log(`${i} x 4 = ${4*i}`);
+        }
+    }
+
+    callFunction(display);
+    callFunction(gugudan);
+    
+    callFunction(function(){
+        console.log("함수 표현식으로 편하게 전달");
+    })
+</script>
