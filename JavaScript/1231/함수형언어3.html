@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    현재 데이터개수 <div id="result"></div>
+    <table style="width: 80%; border-top: 1px solid blue;">
+        <colgroup>
+            <col width="33%">
+            <col width="33%">
+            <col width="33%">
+        </colgroup>
+        <thead>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>이메일</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+        <tr>
+
+        </tr>
+    </table>
+</body>
+
+</html>
+
+<script>
+    let person = [
+        { name: "1", phone: "010-000-0000", email: "asd@naver.com" },
+        { name: "2", phone: "010-000-0000", email: "asd@naver.com" },
+        { name: "3", phone: "010-000-0000", email: "asd@naver.com" },
+        { name: "4", phone: "010-000-0000", email: "asd@naver.com" },
+        { name: "5", phone: "010-000-0000", email: "asd@naver.com" },
+        { name: "6", phone: "010-000-0000", email: "asd@naver.com" },
+        { name: "7", phone: "010-000-0000", email: "asd@naver.com" }
+    ];
+
+    person.forEach((e) => {
+        // console.log(e);
+        console.log(e.name, e.phone, e.email);
+
+    });
+
+
+    function loadData() {
+        //테이블 추가 방법
+        //1. tbody 태그에 대한 참조를 가져옴.
+        tbody = document.getElementById("tbody");
+        person.forEach((e) => {
+            //2. 새로운 행을 만듬 // 역순 출력은 0입력
+            var row = tbody.insertRow(tbody.rows.length);//첫번째 위치에 새로운 행이 추가됨. 행 자체에 대한 객체를 반환
+            //tr태그를 Js로 작성
+            var cell1 = row.insertCell(0);//td태그 만듬
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(1);
+            //td태그 -> 내용을 바꾸기 위해 innerHTML 사용                
+            cell1.innerHTML = e.name;
+            cell2.innerHTML = e.phone;
+            cell3.innerHTML = e.email;
+        });
+    }
+
+    //문서가 모두 메모리에 로딩되면 이벤트 발생
+    window.onload= loadData;
+
+
+
+</script>

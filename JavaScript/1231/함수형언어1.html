@@ -1,0 +1,102 @@
+<!-- 함수는 변수다 - 자바는 해당되지 않는다 
+자바는 변수에 함수를 직접 저장할 수 없다. -> 인터페이스 
+
+interface ICalc              class Test  implements ICalc  
+{                            { 
+                                 @Override 
+    int add();                   int add(){            }
+                                 @Override                
+    int sub();                   int sub(){            }    
+                                 int div() {}
+}                            }
+
+
+@Override : 내가 부모클래스로부터 상속받은 기능중에 맘에 안들어서 다시 정의를 하는데 
+자바는 함수의 이름뿐만아니라 매개변수나 반환등의 내용까지 똑같아야 한다 
+부모 
+int add();    ===> void add();    오버라이딩이 성립되지 않는다 
+이 오류를 컴파일 단계에 체크하고 싶다. 
+                   
+                   @Override         컴파일러가 오버라이딩된거구나 부모클래스에 가서 찾아보자
+                   void add(){}      어 없는데 너 오버라이딩 아니야 다시해 
+
+ICalc                   ICalc icalc = new Test();
+   &add : Test라는 객체의 add 함수 주소가 들어간다 
+   &sub : Test라는 객체의 sub 함수 주소가 들어간다
+
+icalc.div(); //불가능  add, sub만 가능하다. 
+
+자바는 인터페이스를 이용해서 람다를 구성했다
+
+함수형 언어 : 함수주소를 변수에 저장할 수 있다 
+             그런데  C나 자바 같은 경우에는 타입을 엄격하게 체크하기 때문에 
+             내가 함수를 저장하는 변수가 되려면 변수 선언방식이 아주 독특하다 
+
+자바스크립트는 변수 선언을 안해도 된다. 
+
+funcion add(x, y){
+    return x+y;
+}
+
+calc = add; //변수에 함수를 저장한다 
+
+console.log( add(5,3) );
+console.log( calc(5,3) );
+
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    function add(x, y) {
+        return x+y;
+    }
+
+    function sub(x,y){
+        return x-y;
+    }
+    function div(x,y){
+        return x/y;
+    }
+    function mul(x,y){
+        return x*y;
+    }
+
+    calc = add;
+
+    console.log(add(7, 5));
+    console.log(calc(7, 5));
+
+    let funcs = [add, sub, mul, div];
+    for (i = 0; i < funcs.length; i++) {
+        console.log(funcs[i](7, 5));
+    }
+
+    function callFunction(myfunc, x, y) {
+        console.log(myfunc(x, y));
+    }
+
+
+    callFunction(add, 7, 8);
+    callFunction(sub, 7, 8);
+    callFunction(mul, 7, 8);
+    callFunction(div, 7, 8);
+</script>

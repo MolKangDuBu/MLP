@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    //처음부터 존재하며 어디서든 호출가능
+    function display() {
+        console.log("*********************");
+    }
+    //함수표현식 - 이 코드에 도달할때 만들어지고 다음부터 호출가능
+    let fun1 = function(){
+        console.log("*********************");
+    };
+    //화살표함수 - 이 코드에 도달할때 만들어지고 다음부터 호출가능
+    let fun2 = (()=>{
+        console.log("*******************");
+    });
+
+    display();
+    fun1();
+    fun2();
+
+    function sigma(limit){
+        let i, sum=0;
+        for(i=1; i<=limit;i++){
+            sum+=i;
+           
+        }
+        return sum;
+    }
+
+
+    fun1 = function(limit){
+        let i, sum=0;
+        for(i=1; i<=limit;i++){
+            sum+=i;
+            
+        }
+        return sum;
+    }
+
+    fun2 = ((limit)=>{
+        let i, sum=0;
+        for(i=1; i<=limit;i++){
+            sum+=i;
+        
+        }
+        return sum;
+    });
+    console.log(sigma(100));
+    console.log(fun1(100));
+    console.log(fun2(100));
+
+
+function isLeapYear(year){
+    return year%4==0 &&year%100!=0||year%400==0;
+}
+
+fun1 = function(year){  
+    return year%4==0 &&year%100!=0||year%400==0;
+}
+
+fun2 = (year)=>{
+    return year%4==0 &&year%100!=0||year%400==0;
+}
+
+fun2 = (year) =>year%4==0 &&year%100!=0||year%400==0;
+
+fun2 = year=> year%4==0 &&year%100!=0||year%400==0;
+
+console.log(isLeapYear(2022));
+console.log(fun1(2022));
+console.log(fun2(2022));
+
+
+function factorial(n){
+    let i, s=1;
+    for(i=1;i<=n;i++){
+        s*=i;
+    }
+    return s;
+}
+
+
+let Fun1 = function(n){
+    let i, s=1;
+    for(i=1;i<=n;i++){
+        s*=i;
+    }
+    return s;
+}
+
+let Fun2 = ((n)=>{
+    let i, s=1;
+    for(i=1;i<=n;i++){
+        s*=i;
+    }
+    return s;
+});
+
+console.log(factorial(5));
+console.log(Fun1(5));
+console.log(Fun2(5));
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>filter 함수 사용하기</h1>
+</body>
+
+</html>
+
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //filter 함수는 걸러내기 - 콜백함수가 매개변수가 배열의 값하나를 가져오고 반환값으로
+    //true 또는 false를 반환한다. 그러면 조건을 만족하는 데이터의 집합만 반환한다.
+
+    let even = arr.filter((a)=>{return a%2==0});
+    console.log(even);
+
+    let odd = arr.filter((a)=>{return a%3==0});
+    console.log(odd);
+
+
+    let scores=[
+        {name:"홍길동",  kor:90, eng:80, mat:70},
+        {name:"임꺽정", kor:80, eng:80, mat:80},
+        {name:"장길산", kor:70, eng:70, mat:70},
+        {name:"장승업", kor:60, eng:60, mat:70},
+        {name:"김홍도", kor:100, eng:100, mat:90},
+        {name:"신윤복", kor:100, eng:100, mat:100},
+    ];
+    // let Jang = scores.filter((e)=>{return e.name.charAt(0)=='장'});
+    let Jang = scores.filter((e)=>{return e.name[0]=='장'});//같은거임
+    
+    console.log(Jang);
+
+    scores.forEach((e)=>{
+        e.avg = (e.kor+e.eng+e.mat)/3;
+    });
+
+    let Over = scores.filter((e)=>{return e.total>=80});
+    console.log(Over);
+
+</script>

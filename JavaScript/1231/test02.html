@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <colgroup>
+        <col width ="10%"> 
+        <col width ="10%"> 
+        <col width ="10%"> 
+        <col width ="10%"> 
+        <col width ="10%"> 
+        <col width ="10%"> 
+        <col width ="10%"> 
+    </colgroup>
+    <table style="width: 80%">
+        <thead style="background-color: rgb(211, 204, 204); border-top: 2px solid blue;">
+            <th>종목</th>
+            <th>현재가</th>
+            <th>전일비</th>
+            <th>등락률</th>
+            <th>거래량</th>
+            <th>거래대금(백만))</th>
+            <th>52주고가</th>
+        </thead>
+        <tbody id="tbody" style="text-align: left;">
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+<script>
+    let doc = {
+  "data": [
+    {
+      "rank": 1,
+      "name": "로스웰",
+      "symbolCode": "A900260",
+      "code": "HK0000295359",
+      "tradePrice": 347,
+      "change": "UPPER_LIMIT",
+      "changePrice": 80,
+      "changeRate": 0.2996254682,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.2996254682,
+      "high52wPrice": 448,
+      "low52wPrice": 235,
+      "accTradeVolume": 21780180,
+      "accTradePrice": 7156017532
+    },
+    {
+      "rank": 2,
+      "name": "하나금융20호스팩",
+      "symbolCode": "A400560",
+      "code": "KR7400560009",
+      "tradePrice": 2885,
+      "change": "UPPER_LIMIT",
+      "changePrice": 665,
+      "changeRate": 0.2995495495,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.2995495495,
+      "high52wPrice": 2885,
+      "low52wPrice": 2115,
+      "accTradeVolume": 3464592,
+      "accTradePrice": 9272422710
+    },
+    {
+      "rank": 3,
+      "name": "한국정보공학",
+      "symbolCode": "A039740",
+      "code": "KR7039740006",
+      "tradePrice": 6730,
+      "change": "UPPER_LIMIT",
+      "changePrice": 1550,
+      "changeRate": 0.2992277992,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.2992277992,
+      "high52wPrice": 7890,
+      "low52wPrice": 3265,
+      "accTradeVolume": 3042336,
+      "accTradePrice": 19773087050
+    },
+    {
+      "rank": 4,
+      "name": "티피씨글로벌",
+      "symbolCode": "A130740",
+      "code": "KR7130740004",
+      "tradePrice": 4550,
+      "change": "RISE",
+      "changePrice": 845,
+      "changeRate": 0.2280701754,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.2280701754,
+      "high52wPrice": 6430,
+      "low52wPrice": 2895,
+      "accTradeVolume": 8998919,
+      "accTradePrice": 40299596900
+    },
+    {
+      "rank": 5,
+      "name": "안랩",
+      "symbolCode": "A053800",
+      "code": "KR7053800009",
+      "tradePrice": 98900,
+      "change": "RISE",
+      "changePrice": 17500,
+      "changeRate": 0.214987715,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.214987715,
+      "high52wPrice": 105300,
+      "low52wPrice": 60100,
+      "accTradeVolume": 3209373,
+      "accTradePrice": 303636200300
+    },
+    {
+      "rank": 6,
+      "name": "네오위즈",
+      "symbolCode": "A095660",
+      "code": "KR7095660007",
+      "tradePrice": 36100,
+      "change": "RISE",
+      "changePrice": 5300,
+      "changeRate": 0.1720779221,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.1720779221,
+      "high52wPrice": 44350,
+      "low52wPrice": 21350,
+      "accTradeVolume": 7514642,
+      "accTradePrice": 264139592750
+    },
+    {
+      "rank": 7,
+      "name": "동신건설",
+      "symbolCode": "A025950",
+      "code": "KR7025950007",
+      "tradePrice": 38150,
+      "change": "RISE",
+      "changePrice": 5350,
+      "changeRate": 0.1631097561,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.1631097561,
+      "high52wPrice": 67900,
+      "low52wPrice": 27850,
+      "accTradeVolume": 1259421,
+      "accTradePrice": 47807326400
+    },
+    {
+      "rank": 8,
+      "name": "WI",
+      "symbolCode": "A073570",
+      "code": "KR7073570004",
+      "tradePrice": 1300,
+      "change": "RISE",
+      "changePrice": 165,
+      "changeRate": 0.1453744493,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.1453744493,
+      "high52wPrice": 2495,
+      "low52wPrice": 1000,
+      "accTradeVolume": 39622680,
+      "accTradePrice": 52574449715
+    },
+    {
+      "rank": 9,
+      "name": "동진쎄미켐",
+      "symbolCode": "A005290",
+      "code": "KR7005290002",
+      "tradePrice": 51000,
+      "change": "RISE",
+      "changePrice": 6450,
+      "changeRate": 0.1447811448,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.1447811448,
+      "high52wPrice": 52100,
+      "low52wPrice": 25000,
+      "accTradeVolume": 12215323,
+      "accTradePrice": 598151940350
+    },
+    {
+      "rank": 10,
+      "name": "지나인제약",
+      "symbolCode": "A078650",
+      "code": "KR7078650009",
+      "tradePrice": 6870,
+      "change": "RISE",
+      "changePrice": 820,
+      "changeRate": 0.1355371901,
+      "baseDate": null,
+      "basePrice": null,
+      "baseChangeRate": 0.1355371901,
+      "high52wPrice": 61533,
+      "low52wPrice": 4000,
+      "accTradeVolume": 5665676,
+      "accTradePrice": 40298981930
+    }
+  ],
+  "totalCount": 861,
+  "totalPages": 87,
+  "currentPage": 1,
+  "pageSize": 10,
+  "fromDate": null,
+  "toDate": null
+}
+
+
+let info = doc.data;
+
+function mk_table(){
+    tbody = document.getElementById("tbody");
+
+    info.forEach(e => {
+        var row = tbody.insertRow(tbody.rows.length);
+
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        
+        cell1.innerHTML = e.name;
+        cell2.innerHTML = e.tradePrice;
+        cell3.innerHTML = e.changePrice;
+        cell4.innerHTML = e.changeRate;
+        cell5.innerHTML = e.accTradeVolume;
+        cell6.innerHTML = e.accTradePrice;;
+        cell7.innerHTML = e.high52wPrice;
+    });
+}
+
+window.onload=mk_table;
+</script>
