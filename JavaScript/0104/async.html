@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>async와 await</h3>
+</body>
+</html>
+
+<script>
+
+
+    //  console.log("합계", sigma());
+    //  console.log("Ending-----------------------------");
+
+     let promise = new Promise(function(resolve, reject){
+        var i, sum = 0;
+        for(i=1; i<=1000000000;i++)
+            sum+=i;
+
+        resolve(sum);
+     })
+     .then((result)=>{
+        console.log(result);
+     });
+
+     console.log("ending------------------");
+
+
+     async function sigma(){
+        var i, sum = 0;
+        for(i=1; i<=1000000000;i++)
+            sum+=i;
+
+        return sum;
+     }
+
+     sigma().then((result)=>{
+         console.log(result);
+     })
+</script>

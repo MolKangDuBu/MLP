@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>클래스</h3>
+</body>
+</html>
+
+<script>
+    class User{
+        //별도의 변수 선언 필요없음 - 생성자에서 변수를 선언한다.
+        //함수 overloading이 없다 생성자도 하나만 만듬
+        // 생성방식이 여러개이고 싶으면 매개변수에 기본값을 줘야 한다.
+        constructor(name="", age=0){
+            this.name = name; //이때 변수 선언이 이뤄짐.
+            this.age= age;    //
+        }
+
+        display(){
+            console.log(this.name, this.age);
+        }
+    }
+
+    let user = new User("John", 23);
+    user.display();
+</script>

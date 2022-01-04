@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+      let person = {
+        "name": "홍길동", "age": 23, "phone": "010-222-2222",
+        "display": function () {
+            console.log(this.name);
+            console.log(this.age);
+            console.log(this.phone);
+        },
+        "setValue": function (name = "", age = 20, phone = "010-0000-0000") {
+            this.name = name;
+            this.age = age;
+            this.phone = phone;
+        }
+    };
+
+    //_proto_ : 밑줄 문자 2개로 시작하는 변수나 키값들은 Js가 제공함.
+    //내장 변수라 부름
+    //Js에서 상속 _proto_ : 부모객체
+    let student ={_proto_:person, name :"장길산", email : "jang@naver.com",
+    "display":function(){
+        console.log("---------------------"),
+        console.log(this.name);
+        console.log(this.age);
+        console.log(this.phone);
+        console.log(this.email);
+        console.log("---------------------");
+    }};
+    student.display();
+    console.log(student.email);
+    
+</script>

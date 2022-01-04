@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>프로미스</h3>
+</body>
+</html>
+
+<script>
+    let promise = new Promise(function(resolve, reject){
+        //setTimeout는 함수를 받아서 지정된 시간뒤에 호출해준다.
+        //setTimeout(함수, 시간) 시간은 밀리초를 단위로 한다. 1000이 1초
+        //아래 함수는 2초후에 전달된 화살표함수를 호출함.
+        //화살표함수 안에서 resolve("done")을 호출하면 then 구문이 실행된다.
+        setTimeout(()=>{
+            resolve("done");
+        }, 2000);
+    })
+    .then((result)=>{
+        console.log("success");
+        return result;
+    })
+    .then((result)=>{
+        console.log(result, "sucess 22222");
+        return result;
+    })
+    .then((result)=>{
+        console.log(result, "sucess 333333");
+        return result;
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+    .finally(()=>{
+        console.log("ending.....");
+    });
+
+    console.log("프로미스 사용");
+</script>

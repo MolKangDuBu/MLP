@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>DOM 구조</h3>
+</body>
+</html>
+
+<script>
+    window.document.write("윈도우 객체안에 도큐먼트 객체가 있음<br>");
+    document.write("내부 높이 :"+ window.innerHeight+"<br>");
+
+    for(i=1;i<=10;i++){
+        document.write("<h4>홍길동</h4>");
+    }
+
+    // console.log();
+    // [1,2,3].forEach(element => {
+    //     console.log(element);
+    // });
+
+    document.body.style.backgroundColor = "red";
+    setTimeout(()=>{
+        document.body.style.backgroundColor = "";
+    }, 1000);
+
+
+    document.write(navigator.userAgent);
+    document.write(navigator.platform+"<br>");
+    //anchor가 개체
+    document.write(location.href);
+
+    
+</script>
