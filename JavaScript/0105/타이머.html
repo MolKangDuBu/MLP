@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="currentTime"></span>
+    <button onclick="clearInterval(myVar)">스탑</button>
+</body>
+</html>
+
+<script>
+    var myVar = setInterval(myTimer, 1000);//페이지가 로딩되면 이부분이 호출되면서 타이머가 만들어짐
+    //setUbterval 함수는 지정된 시간마다 인자로 전달된 함수를 호출한다.
+    //시간은 1/1000초 
+
+    function myTimer(){
+        var now = new Date();
+        document.getElementById("currentTime").innerHTML = now.toLocaleString();
+        //os에 설정된 날짜형식에 맞추어서 날짜 정보를 가져옴
+    }
+</script>

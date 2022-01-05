@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button id="btnColor1"  style="background-color:aqua"> 배경색</button></br>
+   <button id="btnColor2"  style="background-color:blue" >배경색</button></br>
+   <button id="btnColor3" style="background-color:red" >배경색</button></br>
+   <button id="btnColor4" style="background-color:magenta" >배경색</button></br>
+   <button id="btnColor5" style="background-color:maroon" >배경색</button></br>
+   <button id="btnColor6" style="background-color:green" >배경색</button></br>
+   <button id="btnColor7" style="background-color:lightcoral" >배경색</button></br>
+   
+</body>
+</html>
+
+<script>
+    //DOM구조가 완성되었을때 호출되는 이벤트 핸들러 
+    window.onload = function()
+    {
+        var i;
+        for(i=1; i<=7;i++)
+        {
+            var btnColor = document.getElementById("btnColor"+i);   
+            btnColor.addEventListener("click", changeBackground);
+        }
+    }
+
+    function changeBackground(me){
+        console.log( me.target );
+        document.getElementsByTagName("body")[0].style.backgroundColor=me.target.style.backgroundColor;
+    }
+</script>
+

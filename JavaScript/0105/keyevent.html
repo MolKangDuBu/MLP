@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter your name : <input type="text" name="" id="username"><br>
+
+</body>
+
+</html>
+
+<script>
+    window.onload = function () {
+        //keydown -> keypress -> keyup : 문자로 표현할 수 있는 키가 눌렸을때
+        //keydown -> keyup : alt, shift 문자로 표현할 수 없는 키가 눌렸을때
+
+        var username = document.getElementById("username");
+        username.addEventListener("keydown", function (e) {
+            console.log("keydown");
+            console.log(e.key, e.code, e.shiftKey, e.altKey, e.ctrlKey);
+        });
+
+        username.addEventListener("keypress", () => {
+            console.log("keypress");
+        });
+
+        username.addEventListener("keyup", () => { 
+            console.log("keyup"); 
+            username.value = username.value.toUpperCase();
+        });
+
+
+
+    }
+</script>

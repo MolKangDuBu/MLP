@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    이름: <input type="text" name="data" id="1"> <br>
+    국어: <input type="text" name="data" id="2"> <br>
+    영어: <input type="text" name="data" id="3"> <br>
+    수학: <input type="text" name="data" id="4"> &nbsp;&nbsp;
+    <button id="submit">추가</button>
+    <button id="delete">삭제</button>
+    <br><br>
+
+
+
+    <table style="width : 70%; margin:auto">
+        <colgroup>
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+        </colgroup>
+        <thead>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td id="t_name"></td>
+                <td id="t_kor"></td>
+                <td id="t_eng"></td>
+                <td id="t_mat"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+<script>
+    window.onload = function () {
+        document.getElementById("submit").addEventListener("click", addTable);
+        document.getElementById("delete").addEventListener("click", delTable);
+
+    }
+
+
+    function addTable() {
+        var tbody = document.getElementById("tbody");
+        var data = [];
+        // 값 가져오기
+        for (i = 0; i < 4; i++) {
+            data[i] = document.getElementsByName("data")[i];
+        }
+        //테이블 추가 
+        var row = tbody.insertRow(tbody.rows.length);
+        for (i = 0; i < 4; i++) {
+            var cel = row.insertCell(i);
+            cel.innerHTML = data[i].value;
+        }
+        // 텍스트칸 비우기
+        for (i = 0; i < 4; i++) {
+            data[i].value = "";
+        }
+        data[0].focus();
+
+
+    }
+
+
+    function delTable() {
+        var tbody = document.getElementById("tbody");
+        if (tbody.rows.length > 1) {
+            tbody.deleteRow(tbody.rows.length - 1);
+        } else {
+            alert("삭제할 내용이 없습니다.");
+        }
+    }
+</script>

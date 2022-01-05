@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    x : <input type="text" name="xvalue" id="xvalue"><br>
+    y : <input type="text" name="yvalue" id="yvalue"><br>
+
+
+    <!-- <button type="button" onclick="goCalc(1)">더하기</button> &nbsp;
+    <button type="button" onclick="goCalc(2)">빼기</button> &nbsp;
+    <button type="button" onclick="goCalc(3)">곱하기</button> &nbsp;
+    <button type="button" onclick="goCalc(4)">나누기</button>
+    <br> -->
+
+    <button type="button" id="btnAdd">더하기</button>&nbsp;
+    <button type="button" id="btnSub">빼기</button>&nbsp;
+    <button type="button" id="btnMul">곱하기</button>&nbsp;
+    <button type="button" id="btnDiv">나누기</button>&nbsp;
+    <span id="result"></span>
+
+</body>
+
+</html>
+
+<script>
+
+
+    var btnAdd = document.getElementById("btnAdd");
+    var btnSub = document.getElementById("btnSub");
+    var btnMul = document.getElementById("btnMul");
+    var btnDiv = document.getElementById("btnDiv");
+
+
+    btnAdd.addEventListener("click", goCalc);
+    btnSub.addEventListener("click", goCalc);
+    btnMul.addEventListener("click", goCalc);
+    btnDiv.addEventListener("click", goCalc);
+
+
+    function goCalc(e) {
+
+        console.log(e.target);
+        console.log(e.target.id);
+        var x = parseInt(document.getElementById("xvalue").value);
+        var y = parseInt(document.getElementById("yvalue").value);
+        var result = 0;
+        if (e.target.id == "btnAdd") {
+            result= x + y;
+        } else if (e.target.id == "btnSub") {
+            result=x - y;
+        } else if (e.target.id == "btnMul") {
+            result= x * y;
+        } else if (e.target.id == "btnDiv") {
+            result= x / y;
+        }
+
+        document.getElementById("result").innerHTML=result;
+    }
+</script>

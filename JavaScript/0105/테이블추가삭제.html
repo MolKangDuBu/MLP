@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id = "btnAdd" type="button">추가</button>&nbsp;
+    <button id = "btnDel" type="button">삭제</button>
+
+    <br>
+
+    <table style="width : 70%; margin:auto">
+        <colgroup>
+            <col width = "33%">
+            <col width = "33%">
+            <col width = "33%">
+        </colgroup>
+        <thead>
+            <th>품목</th>
+            <th>수량</th>
+            <th>단가</th>
+        </thead>
+
+        <tbody id = "tbody">
+            <tr> 
+                <td><input type="text" name="product_name" id=""></td>
+                <td><input type="text" name="product_count" id=""></td>
+                <td><input type="text" name="product_price" id=""></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    
+</body>
+</html>
+
+<script>
+    window.onload= function(){
+        document.getElementById("btnAdd").addEventListener("click", funAdd);
+        document.getElementById("btnDel").addEventListener("click", funDel);
+        
+    }
+
+    function funAdd(){
+        var tbody = document.getElementById("tbody");
+        var row = tbody.insertRow(tbody.rows.length);
+        var cel1 = row.insertCell(0);
+        var cel2 = row.insertCell(1);
+        var cel3 = row.insertCell(2);
+        cel1.innerHTML = '<input type ="text" name = "product_name">';
+        cel2.innerHTML = '<input type ="text" name = "product_count">';
+        cel3.innerHTML = '<input type ="text" name = "product_price">';
+        
+
+    }
+
+    function funDel(){
+        var tbody = document.getElementById("tbody");
+        if(tbody.rows.length>1){
+            tbody.deleteRow(tbody.rows.length-1);
+        }else{
+            alert("삭제할 내용이 없습니다.");
+        }
+    }
+</script>
