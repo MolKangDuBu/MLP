@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    근무시간 : <input type="text" name="" id="workTime"><br>
+    시간당 급여액 : <input type="text" name="" id="pay">
+    <button id="calc">계산</button><br>
+
+    <span id="result"></span>
+</body>
+
+</html>
+
+<script>
+    $(function () {
+        $('#calc').click(() => {
+            x = $('#workTime').val();
+            y = $('#pay').val();
+            result = parseInt(x) * parseInt(y);
+            $('#result').html(`주급은 ${result} 입니다.`);
+        });
+       
+    })
+</script>

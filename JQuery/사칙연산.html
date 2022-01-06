@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    x : <input type="text" id="xvalue"><br>
+    y : <input type="text" id="yvalue"><br>
+    result : <input type="text" id="result"><br>
+
+    <button type="button" id="btnAdd">더하기</button>
+    <button type="button" id="btnSub">빼기</button>
+    <button type="button" id="btnMul">곱하기</button>
+    <button type="button" id="btnDiv">나누기</button>
+</body>
+
+</html>
+
+<script>
+    // $(function () {
+    //     $('#btnAdd').click(() => {
+    //         x = $('#xvalue').val();
+    //         y = $('#yvalue').val();
+
+    //         result = parseInt(x) + parseInt(y);
+    //         $('#result').val(result);
+    //     });
+
+    // });
+
+    // $(function () {
+    //     $('#btnSub').click(() => {
+    //         x = $('#xvalue').val();
+    //         y = $('#yvalue').val();
+
+    //         result = parseInt(x) - parseInt(y);
+    //         $('#result').val(result);
+    //     });
+    // });
+
+    // $(function () {
+    //     $('#btnMul').click(() => {
+    //         x = $('#xvalue').val();
+    //         y = $('#yvalue').val();
+
+    //         result = parseInt(x) * parseInt(y);
+    //         $('#result').val(result);
+
+    //     });
+    // });
+    // $(function () {
+    //     $('#btnDiv').click(() => {
+    //         x = $('#xvalue').val();
+    //         y = $('#yvalue').val();
+
+    //         result = parseInt(x) / parseInt(y);
+    //         $('#result').val(result);
+
+    //     });
+    // });
+
+    $(function () {
+        $("#btnAdd").click(()=>{calc('+')});
+        $("#btnSub").click(()=>{calc('-')});
+        $("#btnMul").click(()=>{calc('*')});
+        $("#btnDiv").click(()=>{calc('/')});
+    })
+
+    function calc(oper) {
+        x = $('#xvalue').val();
+        y = $('#yvalue').val();
+
+        if (oper == "+")
+            result = parseInt(x) + parseInt(y);
+        else if (oper == "-")
+            result = parseInt(x) - parseInt(y);
+        else if (oper == "*")
+            result = parseInt(x) * parseInt(y);
+        else if (oper == "/")
+            result = parseInt(x) / parseInt(y);
+
+        $('#result').val(result);
+    }
+</script>

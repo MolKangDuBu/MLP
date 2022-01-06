@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id = "div1">파랗게</div>
+    <div id = "div2">주마등</div>    
+        
+    <button id ="btn1">내용 읽어오기</button>
+    <button id ="btn2">내용 바꾸기</button>
+
+    
+</body>
+</html>
+
+<script>
+    $(()=>{
+        $('#btn1').click(()=>{
+            var a= $('#div1').html();
+            var b = $('#div2').html();
+
+            console.log(a);
+            console.log(b);
+        });
+
+        $("#btn2").click(()=>{
+            $('#div1').html("하이잭");
+            $('#div2').html("컬러바이");
+        })
+    });
+</script>
