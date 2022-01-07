@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <h1>홈페이지</h1>
@@ -29,10 +30,13 @@
 				post방식은 header와 body를 둘다 보내고
 				get방식은 header만 보냄. 
 	 -->
-	<form name = "form" action="./receive.jsp">
-		아이디 : <input type = "text" name ="userid">
-		<button onclick="goIDCheck()">아이디중복체크</button>
-	</form>
+	<form name = "form"  id = "myform">	</form>
+		아이디 : <input type = "text" name ="userid" id ="userid">
+		<button id="check">아이디중복체크</button><br>
+		
+		<span id="result"></span>
+		<!-- test1이면 사용가능한 아이디/ test1이 아니면 사용중인 아이디가 아닙니다. -->
+
 	
 	
 </div>
@@ -40,11 +44,19 @@
 </html>
 
 <script>
-	function goIDCheck() {
-		var frm = document.form;//form의 name속성값
-		frm.method = "post";
-		frm.action = "./receive.jsp";
-		frm.submit();//서버로 전송
-		
-	}
+$(()=>{
+		$("#check").click(()=>{
+			var ID = $("#userid").val();
+			
+			$.ajax({
+				url:"idCheck.jsp", 
+				data:{"userid":ID}, dataType:"json"})
+				.done(function(data){
+					console.log(data);
+					$("#result").html(data.result);
+				}).fail(function(error){
+					console.log(error);
+				});
+		});
+	})
 </script>
