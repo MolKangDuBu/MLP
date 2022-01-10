@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        웹표준에서 제거됨
+        ime-mode :입력모드
+        style = "ime-mode:ative"- 한글상태
+        style = "ime-mode:inative"- 영문상태
+        style = "ime-mode:disable"- 영문만 가능
+
+        intput의 pattern을 이요해서 정규식으로 해결
+        
+     -->
+    <input type="text" name="product" id="product" onkeydown="onKeyDown()">
+    <button id="btnAdd">추가</button>
+    <button id="btnDel">삭제</button>
+
+    <ul id="coffee">
+        <li>카카오</li>
+    </ul>
+</body>
+
+</html>
+
+
+<script>
+    window.onload = function () {
+        document.getElementById("btnAdd").addEventListener("click", funAdd);
+        document.getElementById("btnDel").addEventListener("click", funDel);
+
+    }
+
+    function onKeyDown() {
+     
+        if (event.keyCode == 13) {
+            //13이 엔터
+            funAdd();
+        }
+    }
+
+    function funAdd() {
+        var coffee = document.getElementById("coffee");
+        var child = document.createElement("li");
+        child.innerHTML = document.getElementById("product").value;
+        coffee.appendChild(child);
+        document.getElementById("product").value = "";
+
+
+
+    }
+
+    function funDel() {
+        var coffee = document.getElementById("coffee");
+        console.log(coffee.children.length);
+        if (coffee.children.length > 1) {
+            coffee.removeChild(coffee.lastChild);
+        } else {
+            alert("삭제할 수 없습니다.")
+        }
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>태그를 이용한 셀렉트</p>
+    <p>태그를 이용한 셀렉트</p>
+    <p>태그를 이용한 셀렉트</p>
+    <p>태그를 이용한 셀렉트</p>
+    <button type="button" id="btnPress">누르세요</button>
+
+    <ul>
+        <li>작약</li>
+        <li>백일홍</li>
+        <li>천일홍</li>
+        <li>백합</li>
+    </ul>
+    <button type="button" id="btnPress2">누르세요</button>
+</body>
+
+</html>
+
+<script>
+
+    $(function () {
+        $('#btnPress').click(() => {
+            $('p:first').toggle();
+        });
+        $('#btnPress2').click(()=>{
+            $('ul li:first').toggle();
+        });
+    })
+
+
+</script>

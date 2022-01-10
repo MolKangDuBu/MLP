@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 id="blue">파랗게</h1>
+    <h1 id="red">빨갛게</h1>
+
+    <p id ="t1" class="pstyle"><strong>텍스트</strong></p>
+    <p id ="t2" class="pstyle">텍스트</p>
+
+</body>
+
+</html>
+
+<script>
+    $(function () {
+        $('#blue').click(() => {
+            $('#blue').attr("style", "color:blue");//옛날버전
+            $('#blue').prop("style", "color:blue");
+            $('#blue').html("내용 바뀜");
+        });
+
+        $('#red').click(()=>{
+            $('#red').prop("style", "color:red");
+        });
+
+        $('#t1').click(()=>{
+            console.log($('#t1').text());
+            console.log($('#t1').html());
+             
+        });
+
+        $('.pstyle').click(()=>{
+            $(".pstyle").prop("style", "color:magenta");
+            $('.pstyle')[0].innerHTML="불-편";
+        })
+    });
+</script>

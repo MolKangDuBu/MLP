@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    숫자만 : <input type="number" name="" id="">
+    <button>입력</button><br>
+    숫자만 입력: <input type="text" name="" id="" onkeypress="isNumber()"><br>
+
+   
+    <h1>정규식(pattern)</h1>
+    <p>문자키로 모든 경우를 예측할 수 없다. /패턴/ 패턴하고 일치되는 것을 찾아 작업이 가능함
+        /[^0-9]/ 0~9를 제외한 모든 문자를 찾아서 
+        replace(패턴, 바꿀문자) 특정 패턴을 찾아서 바꿀문자로 바꿔라
+        replace(/[^0-9]/g, '')g: 전체에서 0~9를 제외한 모든 문자를 찾아서 ''으로 바꿔라
+        
+    </p>
+    aaa: <input type="text" name="" id="" oninput = "this.value = this.value.replace(/[^0-9]/g, '');">
+</body>
+</html>
+
+<script>
+    function isNumber(){
+        if(event.ketCode<48 || event.keyCode>57){
+            event.returnValue= false;
+        }
+    }
+</script>

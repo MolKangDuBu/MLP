@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- 리액트의 목적은 관련있는 것 끼리 묶고(html css Js) 하나의  컴포넌트를 만들어
+        새로운 태그를 만들어서 부품처럼 사용함에 있음.
+        페이스북, 인스타그램 만들다 만든 라이브러리
+        augular, polymer(유튜브) 구글
+        Vue -  KT계열사만 augular 사용 대부분 리액트, 뷰 사용
+    -->
+
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        ReactDOM.render(
+            <App/>,
+            document.getElementById('root')
+        );
+        //컴포넌트 만들기 - 함수내의 return 구문에 출력할 태그를 만들어줌.
+        //반드시 root 태그(기본태그)가 있어야함
+        function App() {
+
+            const onclick=()=>{//const가 없으면 2번 실행됨.
+                alert("이벤트 발생");
+            }
+
+            return (
+                <div>
+                    <h1>이벤트</h1>
+                    <p>이벤트 발생</p>
+                    <button type = "button" onClick={onclick}>btn</button>
+                </div>
+            );
+        }
+    </script>
+</body>
+
+</html>

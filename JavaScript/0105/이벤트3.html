@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    x : <input type="text" name="xvalue" id="xvalue"><br>
+    y : <input type="text" name="yvalue" id="yvalue"><br>
+
+
+    <!-- <button type="button" onclick="goCalc(1)">더하기</button> &nbsp;
+    <button type="button" onclick="goCalc(2)">빼기</button> &nbsp;
+    <button type="button" onclick="goCalc(3)">곱하기</button> &nbsp;
+    <button type="button" onclick="goCalc(4)">나누기</button>
+    <br> -->
+
+    <button type="button"id = "btnAdd">더하기</button>&nbsp;
+    <button type="button"id = "btnSub">빼기</button>&nbsp;
+    <button type="button"id = "btnMul">곱하기</button>&nbsp;
+    <button type="button"id = "btnDiv">나누기</button>&nbsp;
+    <span id="result"></span>
+
+</body>
+
+</html>
+
+<script>
+    // function goCalc(num) {
+    //     let x = document.getElementById("xvalue").value;
+    //     let y = document.getElementById("yvalue").value;
+    //     let reuslt = 0;
+    //     switch (num) {
+    //         case 1:
+    //             reuslt = parseInt(x) + parseInt(y);
+    //             break;
+    //         case 2:
+    //             reuslt = parseInt(x) - parseInt(y);
+    //             break;
+    //         case 3:
+    //             reuslt = parseInt(x) * parseInt(y);
+    //             break;
+    //         case 4:
+    //             reuslt = parseInt(x) / parseInt(y);
+    //             break;
+    //     }
+    //     document.getElementById("result").innerHTML = reuslt;
+
+
+        var btnAdd = document.getElementById("btnAdd");
+        var btnSub = document.getElementById("btnSub");
+        var btnMul = document.getElementById("btnMul");
+        var btnDiv = document.getElementById("btnDiv");
+
+        btnAdd.addEventListener("click", (()=>{
+            var x = document.getElementById("xvalue").value;
+            var y = document.getElementById("yvalue").value;
+            document.getElementById("result").innerHTML = parseInt(x)+parseInt(y);
+        }));
+        btnSub.addEventListener("click", (()=>{
+            var x = document.getElementById("xvalue").value;
+            var y = document.getElementById("yvalue").value;
+            document.getElementById("result").innerHTML = parseInt(x)-parseInt(y);
+        }));
+
+        btnMul.addEventListener("click", (()=>{
+            var x = document.getElementById("xvalue").value;
+            var y = document.getElementById("yvalue").value;
+            document.getElementById("result").innerHTML = parseInt(x)*parseInt(y);
+        }));
+
+        btnDiv.addEventListener("click", (()=>{
+            var x = document.getElementById("xvalue").value;
+            var y = document.getElementById("yvalue").value;
+            document.getElementById("result").innerHTML = parseInt(x)/parseInt(y);
+        }));
+    
+
+
+</script>
