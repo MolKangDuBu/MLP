@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id ="app">
+
+    <!-- v-model 속성이 input 태그와 변수를 연동시킴. value가 연동되고
+        span나 p 태그등 input이 아닌 태그에서는 value가 없다.{{변수명}} -->
+      <span>제목: </span>
+      <input v-model="title" placeholder ="제목"><br>
+      <span>내용 :</span>
+      <!-- <input v-model="contents" placeholder ="내용"> -->
+      <br>
+       <textarea v-model ="contents" cols="30" rows ="10"></textarea> 
+      <hr><!--수평선 긋기-->
+
+      <p>{{title}}</p>
+      <p style="white-space:pre-line;">{{contents}}</p>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var app = new Vue({
+        el :"#app",
+        data:{
+            title:"",
+            contents:""
+        }
+        
+    });
+</script>

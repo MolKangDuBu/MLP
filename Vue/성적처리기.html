@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id ="app">
+        이름: <input v-model="name">
+        kor: <input v-model="kor"><br>
+        mat: <input v-model="mat"><br>
+        eng: <input v-model="eng"><br>
+        <button v-on:click = "Payment">입력</button>
+        <span>{{result}}원입니다.</span>   
+
+        <table>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
+
+
+<script>
+    var app = new Vue({
+        el :"#app",
+        data:{
+          result:0,
+          pay :"",
+          time :""
+        },
+        methods: {
+            Payment:function(){
+                this.result = this.pay*this.time;
+            }
+        },
+        
+    });
+</script>

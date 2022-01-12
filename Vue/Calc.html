@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+</head>
+<body>
+    <div id ="app">
+        <input v-model="x">
+        <input v-model="y"><br>
+        <span>{{result}}</span>
+        <button v-on:click ="Add">+</button>
+        <button v-on:click ="Sub">--</button>
+        <button v-on:click ="Mul">*</button>
+        <button v-on:click ="Div">/</button>
+    </div>
+</body>
+</html>
+
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{x:"", y:"", result:0},
+        methods: {
+            Add:function(){this.result =parseInt(this.x)+parseInt(this.y)},
+            Sub:function(){this.result =this.x-this.y},
+            Mul:function(){this.result =this.x*this.y},
+            Div:function(){this.result =this.x/this.y}
+        },
+
+    })
+</script>

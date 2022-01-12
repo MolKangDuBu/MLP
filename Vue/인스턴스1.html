@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h3>이름 : {{name}}</h3>
+        <h3>이름 : {{phone}}</h3>
+        <h3>이름 : {{email}}</h3>
+    </div>
+    <button type="button" onclick="goTest()">함수 호출</button>
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: "#root",
+        data: {
+            name: "ㅎㄱㄷ",
+            phone: "010-000-0000",
+            email: "hong@naver.com"
+        }
+    });
+
+    function goTest() {
+        app.name = "gd";
+        app.phone = "1111";
+        app.email = "@@";
+    }
+</script>

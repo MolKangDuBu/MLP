@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id ="app">
+        <h3>꽃</h3>
+        <ul>
+            <!-- 반복될 항목  아이템 in 반복할 배열-->
+            <li v-for="f in flowers">{{f}}</li>
+        </ul>
+        
+        <ul>
+            <!-- 반복될 항목  아이템 in 반복할 배열-->
+            <li v-for="c in coffees">{{c}}</li>
+          
+        </ul>
+
+        <p  v-for="c in coffees">{{c}}</p>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var app = new Vue({
+        el :"#app",
+        data:{
+          flowers:["착약", "백일홍", "천일홍", "접시꽃", "목단"],
+          coffees:["아메리카노", "카페모카", "카라멜마키아또", "에스프레소"]
+        }
+        
+    });
+</script>

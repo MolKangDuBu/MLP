@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id = "app">
+        <span>{{message}}</span>
+        <h1 v-bind:title="message">{{name}}</h1>
+        <h1>{{age}}</h1>
+    </div>
+</body>
+</html>
+
+
+<script>
+    //객체를 생성하면서 생성자에 JSON 구조로 파라미터를 전달함
+    //제일 중요한 키값 el 태그와 연결작업/ el요소에 태그의 id를 전달
+    //data 영역에 변수를 저장함.
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message:"Hello Vue!",
+            name:"ㅎㄱㄷ",
+            age: 13
+        }
+    });
+</script>

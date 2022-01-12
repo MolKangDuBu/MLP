@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id ="app">
+        <span>{{a}}</span>
+        <button v-on:click="a=10">업데이트 호출</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var app = new Vue({
+        el :"#app",
+        data:{
+            a:0
+        },//Vue내부적으로 객체에 어떤일이 생길때 이 함수들이 호출됨.
+        //키에 함수를 전달함
+        created:function(){
+            console.log("인스턴스가 생성되고나서 이부분이 호출됨");
+        },
+        updated:function(){
+            console.log("인스턴스내의 데이터에 변화가 생겼을때 호출됨");
+        }
+    });
+</script>

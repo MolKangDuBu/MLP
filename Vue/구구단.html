@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        단 : <input type="text" v-model="number"><br>
+        <button v-on:click="mul">구구단 계산</button>
+
+        <div>{{result}}</div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            result: "",
+            number: ""
+        },
+        methods: {
+            mul: function () {
+                console.log("aa");
+                for (i = 1; i <= 9; i++) {
+                    this.result += `${this.number} * ${i} = ${this.number*i}`; 
+                    this.result +="\n";      
+                }
+            }
+            
+        },
+
+    });
+</script>

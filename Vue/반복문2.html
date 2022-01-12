@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span v-for="p in persons">
+            {{p.id}} {{p.name}} {{p.phone}} {{p.email}}<br>
+        </span>
+
+
+        <table>
+            <thead>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>전화번호</th>
+                <th>이메일</th>
+            </thead>
+        
+        <tbody>
+            <tr v-for="p in persons">
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.phone}}</td>
+                <td>{{p.email}}</td>
+            </tr>
+        </tbody>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            persons: [
+                { id: 1, name: "홍길동", phone: "010-444-4444", email: "1@naver.com" },
+                { id: 2, name: "길동", phone: "010-444-444", email: "2@naver.com" },
+                { id: 3, name: "홍동", phone: "010-444-44", email: "3@naver.com" },
+                { id: 4, name: "홍길", phone: "010-444-4", email: "4@naver.com" }
+            ]
+        }
+
+    });
+</script>

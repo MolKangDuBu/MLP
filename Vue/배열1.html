@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--<input type="text" v-model="x[0]"><br>-->
+        <input type="text" v-model="number[0]"><br>
+        <input type="text" v-model="number[1]"><br>
+        <input type="text" v-model="number[2]"><br>
+        <input type="text" v-model="number[3]"><br>
+        <input type="text" v-model="number[4]"><br>
+        <input type="text" v-model="number[5]"><br>
+        <input type="text" v-model="number[6]"><br>
+        <input type="text" v-model="number[7]"><br>
+        <input type="text" v-model="number[8]"><br>
+        <input type="text" v-model="number[9]"><br>
+        <input type="text" v-model="number[10]"><br>
+        <hr>
+        result : <span>{{result}}</span>
+        <button v-on:click=Sum>합계구하기</button>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            result: 0,
+            number: []
+        },
+        methods: {
+            Sum: function () {
+                this.number.forEach(e => {
+                    this.result += parseInt(e);
+                });
+
+            }
+        },
+
+    });
+</script>

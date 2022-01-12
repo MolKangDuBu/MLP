@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        단 : <input type="text" v-model="number"><br>
+        <button v-on:click="mul">구구단 계산</button>
+
+        <div v-for="i in result">{{i}}</div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            result: [],
+            number: ""
+        },
+        methods: {
+            mul: function () {
+                console.log("aa");
+                for (i = 1; i <= 9; i++) {//배열 대입연사자는 push를 이용해야 update가 되는듯함
+                    // let temp= `${this.number} * ${i} = ${this.number*i}`; 
+                    // this.result.push(temp);
+                    let temp = this.number*i;
+                    this.result.push(temp);
+                    this.result[i-1] = this.number*i;
+                    console.log(this.result);
+                }
+            }
+            
+        },
+
+    });
+</script>
