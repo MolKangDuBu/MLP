@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 컴포넌트를 v-for 를 써서 사용하기-->
+            <shopping-item v-for="g in groceryList" v-bind:shopping="g"></shopping-item>
+        </ul>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>이름</th>
+                <th>전화번호</th>
+                <th>이메일</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr is= "persons-p">
+                    <persons-p v-for="g in persons" v-bind:persons="g">
+                        </persons-p>
+                </tr>
+            </tbody>
+
+            </ul>
+    </div>
+</body>
+
+</html>
+
+<script>
+    Vue.component('shopping-item', {
+        props: ["shopping"],
+        template: '<li>{{shopping.id}} {{shopping.text}}</li>'
+    })
+
+    Vue.component('persons-p', {
+        props: ["persons"],
+        template: '<tr><td>{{persons.id}}</td> <td>{{persons.name}}</td>  <td>{{persons.phone}}</td> <td>{{persons.email}}</td></tr>'
+    })
+    new Vue({
+        el: "#app",
+        data: {
+            groceryList: [
+                { id: 0, text: "Vegetabls" },
+                { id: 1, text: "Cheese" },
+                { id: 2, text: "Milk" },
+                { id: 3, text: "Coffee" },
+            ],
+            persons: [
+                { id: 1, name: "홍길동", phone: "010-444-4444", email: "1@naver.com" },
+                { id: 2, name: "길동", phone: "010-444-444", email: "2@naver.com" },
+                { id: 3, name: "홍동", phone: "010-444-44", email: "3@naver.com" },
+                { id: 4, name: "홍길", phone: "010-444-4", email: "4@naver.com" }
+            ]
+        }
+    })
+</script>

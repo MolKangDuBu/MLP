@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component1 v-bind:propsdata="message"></my-component1>
+        <my-component1 v-bind:test="message"></my-component1>
+        <my-component1></my-component1>
+    </div>
+</body>
+</html>
+
+<script>
+    //부모컴포넌트 쪽에서 자식컴포넌트에 값 전달하기
+    //message라는 변수의 값을 자식 컴포넌트에 전달하고자 한다.
+    //v-bind:propsdata = "message" bind- 연동한다.
+    //부모 컴포넌트에 있는 message변수의 값을 컴포넌트 내의 props에 속한 요소인 propsdata라는 키값으로 전달함.
+    var app = new Vue({
+        el :"#app",
+        data:{
+            message : "컴포넌트 연습1"
+        },
+        components:{
+            "my-component1":{
+                template :"<div style='color:blue'>This is first component **{{propsdata}}**{{test}}</div>",
+                props:["propsdata", "test"]//데이터를 받아들이기 위한 키값을 저장
+                //부모 컴포넌트 쪽에서 자식 컴포넌트에 값을 전달할건데 어떤 키값으로 주어야하는가?
+
+            }
+        }
+    })
+        
+    
+</script>

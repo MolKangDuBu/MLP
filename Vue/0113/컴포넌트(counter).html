@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id ="app">
+
+        <component-counter></component-counter>
+    </div>
+
+</body>
+</html>
+
+<script>
+    //컴포넌트 내에서 이벤트 처리법
+    //컴포넌트에서 데이터를 저장하려면 Json 객체를 넣으면 안되고 콜백함수를 주고, return
+    //구문안에 변수를 써야함.
+    Vue.component('component-counter', {
+        data:function(){
+            return{
+                count:0
+            }
+        },
+        template:`<button v-on:click="count++">clicked me {{count}} times</button>`
+    });
+
+
+    var app = new Vue({
+        el :"#app",
+        data:{
+          
+        }
+        
+    });
+</script>

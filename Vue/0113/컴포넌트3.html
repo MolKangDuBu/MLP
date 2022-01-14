@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mycomponent v-bind:name="pname" v-bind:age="page"></mycomponent>
+        
+        이름 : <input type = "text" v-model="pname"><br>
+        나이 : <input type = "text" v-model="page"><br>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    //글로벌 컴포넌트
+    //Vue.component("컴포넌트 이름", {template :컴포넌트의 모양, props:[]부모가 자식한테 값을 전달하고자 할때})
+    Vue.component("mycomponent", {
+        template: "<p>내이름은 {{name}} 나이는 {{age}}입니다</p>",
+        props: ["name", "age"]
+    });
+    var app = new Vue({
+        el: "#app",
+        data: {
+            pname: "홍길동", page: 23
+        }
+
+
+    })
+
+
+</script>

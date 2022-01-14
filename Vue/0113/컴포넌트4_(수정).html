@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <people-list v-bind:people="people"></people-list>
+    </div>
+</body>
+</html>
+
+<script>
+
+    Vue.component('people-list', {
+        template:`  
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>phone</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr v-for="person in people" > 
+                    <td>{{person.id}}</td> 
+                    <td>{{person.name}}</td> 
+                    <td>{{person.phone}}</td> 
+                    <td>{{person.email}}</td>
+                </tr>
+            </tbody>
+        </table>`,
+        props:["people"]
+    });
+
+
+    new Vue({
+        el:"#app",
+        data:{
+            people:[
+                {id:1, name:"홍길동", phone:"010-0000-0001", email:"hong@ddd.com"},
+                {id:2, name:"임길동", phone:"010-0000-0002", email:"lim@ddd.com"},
+                {id:3, name:"장길동", phone:"010-0000-0003", email:"jang@ddd.com"},
+                {id:4, name:"이길동", phone:"010-0000-0004", email:"lee@ddd.com"},
+                {id:5, name:"홍경래", phone:"010-0000-0005", email:"hong2@ddd.com"},
+            ]
+        },
+       
+    })
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <component-score></component-score>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+// 컴포넌트에 대문자 ㄴㄴ
+    Vue.component('component-score', {
+        data: function () {
+            return {
+                result: 0,
+                name :"",
+                kor: 0,
+                eng: 0,
+                mat :0
+            }
+        }, template: `
+            <div>
+                name : <input v-model="name"><br/>
+                kor  : <input v-model="kor"><br/>
+                mat  : <input v-model="mat"><br/>
+                eng  : <input v-model="eng"><br/>
+                
+                <button v-on:click ="total">Total</button><br/>
+                <table>
+                    <thead>
+                        <th>name</th>
+                        <th>kor</th>
+                        <th>mat</th>
+                        <th>eng</th>
+                        <th>total</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{name}}<td>
+                            <td>{{kor}}<td>
+                            <td>{{mat}}<td>
+                            <td>{{eng}}<td>
+                            <td>{{result}}<td>
+                        <tr>  
+                    </tbody>
+                
+            </div> 
+        `,
+        methods: {
+           
+            total: function () { this.result = parseInt(this.kor) + parseInt(this.mat)+parseInt(this.eng)}
+
+        }
+    });
+
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+        }
+
+    });
+</script>

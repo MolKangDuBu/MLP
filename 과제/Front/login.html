@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 폼</title>
+   
+   <style>
+        body {
+            text-align: center;
+        }
+
+      
+    </style>
+
+
+
+</head>
+
+<body>
+    <h1>로그인</h1>
+    <hr>
+    <div>
+        <p>아이디 <input style="margin-left: 20px;" type="text" id="ID"></p>
+        <p>비밀번호<input style="margin-left: 10px;" type="text" id="Password"></p><br />
+        <button onclick="Login()">로그인</button>&nbsp;
+        <button>취 소</button>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function Login() {
+        let ID = document.getElementById("ID");
+        let Password = document.getElementById("Password");
+        if (ID.value.replaceAll(" ", '').length == 0) {
+            alert("아이디를 입력해주세요")
+        }
+        ID.value = "";
+        Password.value = "";
+
+    }
+</script>
