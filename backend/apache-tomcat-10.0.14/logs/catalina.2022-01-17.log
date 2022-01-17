@@ -1,0 +1,88 @@
+17-Jan-2022 14:31:01.170 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.0.14
+17-Jan-2022 14:31:01.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Dec 2 2021 22:01:36 UTC
+17-Jan-2022 14:31:01.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.0.14.0
+17-Jan-2022 14:31:01.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 10
+17-Jan-2022 14:31:01.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+17-Jan-2022 14:31:01.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+17-Jan-2022 14:31:01.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17.0.1
+17-Jan-2022 14:31:01.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.1+12-LTS-39
+17-Jan-2022 14:31:01.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+17-Jan-2022 14:31:01.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:31:01.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:31:01.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Jan-2022 14:31:01.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+17-Jan-2022 14:31:01.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+17-Jan-2022 14:31:01.209 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Jan-2022 14:31:01.210 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Jan-2022 14:31:01.211 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\conf\logging.properties
+17-Jan-2022 14:31:01.212 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Jan-2022 14:31:01.212 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+17-Jan-2022 14:31:01.216 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-Jan-2022 14:31:01.217 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dignore.endorsed.dirs=
+17-Jan-2022 14:31:01.217 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:31:01.218 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:31:01.219 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\temp
+17-Jan-2022 14:31:01.229 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.31]을(를) 로드했습니다.
+17-Jan-2022 14:31:01.231 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+17-Jan-2022 14:31:01.243 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1l  24 Aug 2021]
+17-Jan-2022 14:31:01.680 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+17-Jan-2022 14:31:01.729 INFO [main] org.apache.catalina.startup.Catalina.load [921] 밀리초 내에 서버가 초기화되었습니다.
+17-Jan-2022 14:31:01.820 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+17-Jan-2022 14:31:01.823 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.0.14]
+17-Jan-2022 14:31:01.852 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\docs]을(를) 배치합니다.
+17-Jan-2022 14:31:02.640 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [147] 밀리초가 소요됐습니다.
+17-Jan-2022 14:31:02.684 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\docs]에 대한 배치가 [832] 밀리초에 완료되었습니다.
+17-Jan-2022 14:31:02.687 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\examples]을(를) 배치합니다.
+17-Jan-2022 14:31:04.897 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\examples]에 대한 배치가 [2,209] 밀리초에 완료되었습니다.
+17-Jan-2022 14:31:04.901 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\host-manager]을(를) 배치합니다.
+17-Jan-2022 14:31:05.095 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\host-manager]에 대한 배치가 [194] 밀리초에 완료되었습니다.
+17-Jan-2022 14:31:05.098 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\manager]을(를) 배치합니다.
+17-Jan-2022 14:31:05.283 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\manager]에 대한 배치가 [185] 밀리초에 완료되었습니다.
+17-Jan-2022 14:31:05.285 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\ROOT]을(를) 배치합니다.
+17-Jan-2022 14:31:05.382 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\ROOT]에 대한 배치가 [97] 밀리초에 완료되었습니다.
+17-Jan-2022 14:31:05.389 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+17-Jan-2022 14:31:05.567 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3833] 밀리초 내에 시작되었습니다.
+17-Jan-2022 14:50:05.506 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.0.14
+17-Jan-2022 14:50:05.512 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Dec 2 2021 22:01:36 UTC
+17-Jan-2022 14:50:05.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.0.14.0
+17-Jan-2022 14:50:05.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 10
+17-Jan-2022 14:50:05.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+17-Jan-2022 14:50:05.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+17-Jan-2022 14:50:05.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17.0.1
+17-Jan-2022 14:50:05.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.1+12-LTS-39
+17-Jan-2022 14:50:05.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+17-Jan-2022 14:50:05.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:50:05.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:50:05.530 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+17-Jan-2022 14:50:05.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+17-Jan-2022 14:50:05.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+17-Jan-2022 14:50:05.537 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-Jan-2022 14:50:05.537 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-Jan-2022 14:50:05.538 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\conf\logging.properties
+17-Jan-2022 14:50:05.539 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-Jan-2022 14:50:05.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djdk.tls.ephemeralDHKeySize=2048
+17-Jan-2022 14:50:05.541 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-Jan-2022 14:50:05.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dignore.endorsed.dirs=
+17-Jan-2022 14:50:05.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:50:05.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14
+17-Jan-2022 14:50:05.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\temp
+17-Jan-2022 14:50:05.552 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.31]을(를) 로드했습니다.
+17-Jan-2022 14:50:05.553 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+17-Jan-2022 14:50:05.562 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1l  24 Aug 2021]
+17-Jan-2022 14:50:05.927 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-9000"]을(를) 초기화합니다.
+17-Jan-2022 14:50:05.969 INFO [main] org.apache.catalina.startup.Catalina.load [729] 밀리초 내에 서버가 초기화되었습니다.
+17-Jan-2022 14:50:06.033 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+17-Jan-2022 14:50:06.036 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.0.14]
+17-Jan-2022 14:50:06.053 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\docs]을(를) 배치합니다.
+17-Jan-2022 14:50:06.601 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom [SHA1PRNG] 알고리즘을 사용하여, 세션 ID를 생성하기 위한 SecureRandom 객체를 생성하는데, [141] 밀리초가 소요됐습니다.
+17-Jan-2022 14:50:06.637 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\docs]에 대한 배치가 [584] 밀리초에 완료되었습니다.
+17-Jan-2022 14:50:06.638 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\examples]을(를) 배치합니다.
+17-Jan-2022 14:50:07.766 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\examples]에 대한 배치가 [1,128] 밀리초에 완료되었습니다.
+17-Jan-2022 14:50:07.769 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\host-manager]을(를) 배치합니다.
+17-Jan-2022 14:50:07.867 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\host-manager]에 대한 배치가 [97] 밀리초에 완료되었습니다.
+17-Jan-2022 14:50:07.869 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\manager]을(를) 배치합니다.
+17-Jan-2022 14:50:07.981 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\manager]에 대한 배치가 [112] 밀리초에 완료되었습니다.
+17-Jan-2022 14:50:07.985 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\ROOT]을(를) 배치합니다.
+17-Jan-2022 14:50:08.042 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [C:\Users\itsok\Desktop\MLP full-stack\Code\MLP\backend\apache-tomcat-10.0.14\webapps\ROOT]에 대한 배치가 [58] 밀리초에 완료되었습니다.
+17-Jan-2022 14:50:08.049 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-9000"]을(를) 시작합니다.
+17-Jan-2022 14:50:08.194 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [2224] 밀리초 내에 시작되었습니다.
