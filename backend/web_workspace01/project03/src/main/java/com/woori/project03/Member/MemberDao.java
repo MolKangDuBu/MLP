@@ -1,19 +1,20 @@
-package com.woori.project03.board;
+package com.woori.project03.Member;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.woori.project03.Member.MemberDto;
+import com.woori.project03.Member.MemberDto;
 import com.woori.project03.common.DBUtil;
 
-public class BoardDao {
-	
-	public BoardDao() {
+public class MemberDao {
+
+	public MemberDao() {
 		try {
 			Class.forName(DBUtil.driver);
 		} catch (ClassNotFoundException e) {
@@ -21,8 +22,9 @@ public class BoardDao {
 			e.printStackTrace();
 		}
 	}
-	List<BoardDto> getList(){
-		List<BoardDto>list = new ArrayList<BoardDto>();
+	
+	List<MemberDto> getList(){
+		List<MemberDto>list = new ArrayList<MemberDto>();
 		
 		Connection conn =null;
 		Statement stmt =null;
@@ -30,15 +32,16 @@ public class BoardDao {
 		
 		try {
 			conn = DriverManager.getConnection(DBUtil.url, DBUtil.user, DBUtil.pwd);
-			String sql = "select * from board";
+			String sql = "select * from Member";
 			stmt = conn.createStatement();
 			rs= stmt.executeQuery(sql);
 			while(rs.next()) {
-				BoardDto dto = new BoardDto();
+				MemberDto dto = new MemberDto();
 				dto.setId(rs.getString("id"));
-				dto.setTitle(rs.getString("title"));
-				dto.setWriter(rs.getString("writer"));
-				dto.setContents(rs.getString("contents"));
+				dto.setUserid(rs.getString("userid"));
+				dto.setPassword(rs.getString("password"));
+				dto.setUsername(rs.getString("username"));
+				dto.setEmail(rs.getString("email"));
 				dto.setWdate(rs.getString("wdate"));
 				list.add(dto);
 			}
@@ -62,40 +65,25 @@ public class BoardDao {
 		return list;
 	}
 	
-	public void insert(BoardDto dto) {
-		Connection conn =null;
-		PreparedStatement stmt =null;
-		
-		
-		try {
-			conn = DriverManager.getConnection(DBUtil.url, DBUtil.user, DBUtil.pwd);
-			String sql = "insert into board(title, contents, writer, wdate) values(?,?,?,now())";
-			stmt = conn.prepareStatement(sql);
-			stmt.setString(1, dto.getTitle());
-			stmt.setString(2, dto.getWriter());
-			stmt.setString(3, dto.getContents());
-			stmt.executeUpdate();
-		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	
+	
+	void Check(MemberDto dto) {
+		List<MemberDto> list = getList();
+		String str = "false";
+		for(MemberDto l: list) {
+			if(dto.getUserid().equals(l.getUserid())&&dto.getPassword().equals(l.getPassword())){
+				str = "true";
+				getView(dto.getUserid());
+				break;
+			}
 		}
-		finally {
-			
-				try {
-			
-					if (stmt!=null) stmt.close();
-					if (conn!=null) conn.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		}
+		System.out.println(str);
 		
 	}
 	
-	BoardDto getView(String id){
-		BoardDto resultDto = new BoardDto();
+	
+	MemberDto getView(String userid){
+		MemberDto resultDto = new MemberDto();
 		
 		Connection conn =null;
 		Statement stmt = null;
@@ -103,7 +91,7 @@ public class BoardDao {
 		
 		try {
 			conn = DriverManager.getConnection(DBUtil.url, DBUtil.user, DBUtil.pwd);
-			String sql = "select * from board where id ="+id;
+			String sql = "select * from Member where userid =\""+userid+"\"";
 			System.out.println(sql);
 			
 			stmt = conn.createStatement();
@@ -111,9 +99,10 @@ public class BoardDao {
 			
 			if(rs.next()) {
 				resultDto.setId(rs.getString("id"));
-				resultDto.setTitle(rs.getString("title"));
-				resultDto.setWriter(rs.getString("writer"));
-				resultDto.setContents(rs.getString("contents"));
+				resultDto.setUserid(rs.getString("userid"));
+				resultDto.setPassword(rs.getString("password"));
+				resultDto.setUsername(rs.getString("username"));
+				resultDto.setEmail(rs.getString("email"));
 				resultDto.setWdate(rs.getString("wdate"));
 				
 			}
@@ -131,8 +120,4 @@ public class BoardDao {
 		}
 		return resultDto;
 	}
-	
-	
-	
-
 }

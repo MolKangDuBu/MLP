@@ -13,6 +13,12 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.
      <url-pattern>/hello</url-pattern>
   </servlet-mapping> 
   
+  
+  
+  
+  
+  
+  
     <servlet>
      <servlet-name>index</servlet-name>
      <servlet-class>com.woori.servlet.IndexServlet</servlet-class>

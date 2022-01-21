@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import = "com.woori.project03.board.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +13,8 @@
 
 </head>
 <body>
-  <%@include file ="../include/nav.jsp" %>
-	<%BoardDto dto = (BoardDto)request.getAttribute("boardDto"); %>
+    <%@include file="../include/nav.jsp" %>
+
     <div class="container" style="margin-top:80px">
         <h2>게시판 상세보기</h2>
 
@@ -28,9 +27,9 @@
               </tr>
               <tr>
                 <th >작성자</th>
-                <td><%=dto.getWriter() %></td>
+                <td>홍길동</td>
                 <th >작성일</th>
-                <td><%=dto.getWdate() %></td>
+                <td>2021-12-27</td>
                 <th  >조회수</th>
                 <td>12</td> 
               </tr>
@@ -39,7 +38,8 @@
               </tr>
               <tr>
                 <td colspan="6">
-                 <%=dto.getContents() %>
+                  내용을 써봅시다<br/>내용을 써봅시다<br/>내용을 써봅시다<br/>내용을 써봅시다<br/>
+                  내용을 써봅시다<br/>내용을 써봅시다<br/>내용을 써봅시다<br/>
                 </td>
               </tr>
             </tbody>
@@ -49,8 +49,11 @@
          
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="<%=request.getContextPath()%>/board?cmd=list" class="btn btn-secondary">목록으로</a>
-         	         
+            <a href="#" class="btn btn-secondary">Link Button</a>
+            <button type="button" class="btn btn-secondary">Button</button>
+            <input type="button" class="btn btn-secondary" value="Input Button">
+            <input type="submit" class="btn btn-secondary" value="Submit Button">
+            <input type="reset" class="btn btn-secondary" value="Reset Button">
           </div>
           
     </div>

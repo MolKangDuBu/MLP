@@ -12,35 +12,46 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/board")
-
 public class BoardServlet extends HttpServlet{
 
-	//  /board?cmd =list 
+	
+	//  /board?cmd=list
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setCharacterEncoding("utf-8");
 		
 		String cmd = req.getParameter("cmd");
+		
+		System.out.println(cmd);
+		
 		BoardController controller = new BoardController();
-		if(cmd == null||cmd.equals("list")) {
-			//request setAttribute 함수를 이용해 사용자가 request 객체에 자신의 객체를 저장할 수 있다.
-			req.setAttribute("boardList", controller.getList());
-			//jsp 페이지로 전달
+		
+		if(cmd==null || cmd.equals("list"))
+		{
+			//request개체에 setAttribute 함수를 이용해가 사용자가 request 객체에 자신의 객체를 저장할 수 있다  
+			req.setAttribute("boardList",  controller.getList());
+			//jsp페이지로 전달 
 			RequestDispatcher rd = req.getRequestDispatcher("/board2/board_list.jsp");
 			rd.forward(req, resp);
-		}else if(cmd.equals("write")){
+		}
+		else if(cmd.equals("write"))
+		{
 			RequestDispatcher rd = req.getRequestDispatcher("/board2/board_write.jsp");
-			rd.forward(req, resp);
-		}else if(cmd.equals("save")) {
+			rd.forward(req, resp);	
+		}
+		else if(cmd.equals("save"))
+		{
 			controller.insert(req, resp);
-			resp.sendRedirect("/board?cmd=list");
-			//forward request객체에 저장된 값을 전달하는 방식
-			//request 에 저장된거 지우고 이동함
-		}else if(cmd.equals("view")) { // /board?cmd=view&id=1
+			resp.sendRedirect(req.getContextPath()+"/board?cmd=list"); 
+			//forward   request객체에 저장된값을 전달하는 방식으로 이동
+			//request  에 저장된거 지우고 이동함 
+		}
+		else if(cmd.equals("view"))  // /board?cmd=view&id=1
+		{
 			req.setAttribute("boardDto", controller.getView(req, resp));
 			RequestDispatcher rd = req.getRequestDispatcher("/board2/board_view.jsp");
-			rd.forward(req, resp);
+			rd.forward(req, resp);		
 		}
 	}
 
@@ -48,6 +59,16 @@ public class BoardServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req,resp);
 	}
+}	
 
-	
-}
+
+
+
+
+
+
+
+
+
+
+

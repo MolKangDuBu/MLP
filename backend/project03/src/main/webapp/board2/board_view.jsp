@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import = "com.woori.project03.board.*" %>
+<%@page import="com.woori.project03.board.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +15,13 @@
 
 </head>
 <body>
-  <%@include file ="../include/nav.jsp" %>
-	<%BoardDto dto = (BoardDto)request.getAttribute("boardDto"); %>
+    <%@include file="../include/nav.jsp" %>
+
+	<%
+	BoardDto dto = (BoardDto)request.getAttribute("boardDto");
+	%>
     <div class="container" style="margin-top:80px">
         <h2>게시판 상세보기</h2>
-
-
         <table class="table table-hover " style="margin-top:30px;">
             <tbody>
               <tr class="table-secondary">
@@ -28,9 +30,9 @@
               </tr>
               <tr>
                 <th >작성자</th>
-                <td><%=dto.getWriter() %></td>
+                <td><%=dto.getWriter()%></td>
                 <th >작성일</th>
-                <td><%=dto.getWdate() %></td>
+                <td><%=dto.getWdate()%></td>
                 <th  >조회수</th>
                 <td>12</td> 
               </tr>
@@ -38,8 +40,8 @@
                 <th colspan="6"  class="table-secondary">내용</td>
               </tr>
               <tr>
-                <td colspan="6">
-                 <%=dto.getContents() %>
+                <td colspan="6">             
+					<%=dto.getContents()%>
                 </td>
               </tr>
             </tbody>
@@ -49,10 +51,12 @@
          
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="<%=request.getContextPath()%>/board?cmd=list" class="btn btn-secondary">목록으로</a>
-         	         
+            <a href="<%=request.getContextPath()%>/board?cmd=list" class="btn btn-secondary">목록</a>
+         
           </div>
           
     </div>
 </body>
 </html>
+
+

@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import= "java.util.*" %>
- <%@page import = "com.woori.project03.board.*" %>   
-    
-    
+<%@page import="java.util.*" %>
+<%@page import="com.woori.project03.board.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +16,8 @@
 
 </head>
 <body>
-<%@include file ="../include/nav.jsp" %>
-
+ 
+<%@include file="../include/nav.jsp" %>
 
     <div class="container" style="margin-top:80px">
         <h2>게시판 목록</h2>
@@ -37,12 +36,12 @@
           </div>
 
         <table class="table table-hover ">
-        <colgroup>
-        <col width = "8%">
-        <col width = "*">
-        <col width = "12%">
-        <col width = "12%">
-        </colgroup>
+        	<colgroup>
+        		<col width="8%">
+        		<col width="*">
+        		<col width="12%">
+        		<col width="12%">
+        	</colgroup>
             <thead class="table-secondary">
               <tr>
                 <th>번호</th>
@@ -52,20 +51,21 @@
               </tr>
             </thead>
             <tbody>
-             <%
-             	List<BoardDto>list = (List<BoardDto>)request.getAttribute("boardList");
-             	for(BoardDto tempDto :list){
-             		
-             %>
-           
+            <%
+            
+            List<BoardDto> list = (List<BoardDto>)request.getAttribute("boardList");
+           	for(BoardDto tempDto : list){
+            %>
               <tr>
                 <td><%=tempDto.getId()%></td>
-                <%String url = request.getContextPath()+"/board?cmd=view&id="+tempDto.getId(); %>
-                <td><a href =<%=url%>><%=tempDto.getTitle()%></a></td>
+                <%
+                String url=request.getContextPath()+"/board?cmd=view&id="+tempDto.getId();
+                %>
+                <td><a href="<%=url%>"><%=tempDto.getTitle()%></a></td>
                 <td><%=tempDto.getWriter()%></td>
                 <td><%=tempDto.getWdate()%></td>
               </tr>
-           <%} %>
+            <%}%>
             </tbody>
           </table>
 
@@ -83,10 +83,14 @@
           </ul>
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="<%=request.getContextPath()%>/board/board_write.jsp" class="btn btn-secondary">글쓰기</a>
-            
+            <a href="<%=request.getContextPath()%>/board?cmd=write" 
+               class="btn btn-secondary">글쓰기</a>
           </div>
           
     </div>
 </body>
 </html>
+
+
+
+

@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import= "java.util.*" %>
- <%@page import = "com.woori.project03.board.*" %>   
-    
-    
+<%@page import="java.sql.*" %>
+<%@page import="java.util.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +16,32 @@
 
 </head>
 <body>
-<%@include file ="../include/nav.jsp" %>
+<%
+String driver = "com.mysql.cj.jdbc.Driver";
+String url = "jdbc:mysql://localhost:3306/mydb?allowPublicKeyRetrieval=true";
+String user = "root";
+String pwd = "1234";
 
+Connection conn=null;
+Statement stmt =null;
+ResultSet rs =null;
+
+try
+{
+	Class.forName(driver);
+	System.out.println("드라이버 로딩 성공");
+	conn = DriverManager.getConnection(url, user, pwd);
+	System.out.println("연결 성공");
+	String sql = "select * from board";
+	stmt = conn.createStatement();
+	rs = stmt.executeQuery(sql);
+}
+catch(Exception ex)
+{
+	ex.printStackTrace();
+}
+%> 
+<%@include file="../include/nav.jsp" %>
 
     <div class="container" style="margin-top:80px">
         <h2>게시판 목록</h2>
@@ -37,12 +60,12 @@
           </div>
 
         <table class="table table-hover ">
-        <colgroup>
-        <col width = "8%">
-        <col width = "*">
-        <col width = "12%">
-        <col width = "12%">
-        </colgroup>
+        	<colgroup>
+        		<col width="8%">
+        		<col width="*">
+        		<col width="12%">
+        		<col width="12%">
+        	</colgroup>	
             <thead class="table-secondary">
               <tr>
                 <th>번호</th>
@@ -52,23 +75,22 @@
               </tr>
             </thead>
             <tbody>
-             <%
-             	List<BoardDto>list = (List<BoardDto>)request.getAttribute("boardList");
-             	for(BoardDto tempDto :list){
-             		
-             %>
-           
+            <%while(rs.next()){ %>
               <tr>
-                <td><%=tempDto.getId()%></td>
-                <%String url = request.getContextPath()+"/board?cmd=view&id="+tempDto.getId(); %>
-                <td><a href =<%=url%>><%=tempDto.getTitle()%></a></td>
-                <td><%=tempDto.getWriter()%></td>
-                <td><%=tempDto.getWdate()%></td>
+                <td><%=rs.getString("id")%></td>
+                <td><%=rs.getString("title")%></td>
+                <td><%=rs.getString("writer")%></td>
+                <td><%=rs.getString("wdate")%></td>
               </tr>
-           <%} %>
+             <%}%>
             </tbody>
           </table>
 
+<%
+	if (rs!=null) rs.close();
+	if (stmt!=null) stmt.close();
+	if (conn!=null) conn.close();		
+%>
  
           <ul class="pagination  justify-content-center">
             <li class="page-item disabled"><a class="page-link" href="#">first</a></li>
@@ -83,8 +105,8 @@
           </ul>
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="<%=request.getContextPath()%>/board/board_write.jsp" class="btn btn-secondary">글쓰기</a>
-            
+            <a href="<%=request.getContextPath()%>/board/board_write.jsp" 
+               class="btn btn-secondary">글쓰기</a>
           </div>
           
     </div>
