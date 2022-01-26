@@ -6,12 +6,13 @@ public class ScoreDto {
 	private int kor;
 	private int mat;
 	private int eng;
+	private int science;
 	
 	
 	
 	public ScoreDto() {}
 	
-	public ScoreDto(String id, String name, int kor, int mat, int eng) {
+	public ScoreDto(String id, String name, int kor, int mat, int eng, int science) {
 		super();
 		
 		this.id= id;
@@ -19,15 +20,16 @@ public class ScoreDto {
 		this.kor = kor;
 		this.mat = mat;
 		this.eng = eng;
+		this.science = science;
 	}
 	
 	
 	public int gettotal() {
-		return kor+mat+eng;
+		return kor+mat+eng+science;
 	}
 	
 	public int getevg() {
-		return (kor+mat+eng)/3;
+		return (kor+mat+eng+science)/4;
 	}
 	
 	
@@ -64,6 +66,14 @@ public class ScoreDto {
 	}
 	public void setEng(int eng) {
 		this.eng = eng;
+	}
+
+	public int getScience() {
+		return science;
+	}
+
+	public void setScience(int science) {
+		this.science = science;
 	}
 	
 	

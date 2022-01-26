@@ -11,7 +11,7 @@ public class ScoreDaoImpl implements ScoreDao{
 	List<ScoreDto>list = new ArrayList<ScoreDto>();
 	
 	public ScoreDaoImpl(){
-		list.add(new ScoreDto("1", "홍길동", 100, 100, 100));
+		list.add(new ScoreDto("1", "홍길동", 100, 100, 100, 100));
 	}
 	
 	
