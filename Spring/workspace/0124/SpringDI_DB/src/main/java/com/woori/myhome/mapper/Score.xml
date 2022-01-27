@@ -7,6 +7,9 @@
 <mapper namespace="Score">
 	<!-- 쿼리를 XML로 작성하고 id:식별값 parameterType : 우리가 전달할값 
 		 resultType : 받아오는 값-->
+		 
+	<!-- 맵 만들기  -->
+		 
 	<select id="Score_getlist" parameterType="ScoreDto"	
 						resultType="ScoreDto">
  		select
