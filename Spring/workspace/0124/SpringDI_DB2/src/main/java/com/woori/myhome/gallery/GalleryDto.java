@@ -1,23 +1,17 @@
-package com.woori.myhome.board;
+package com.woori.myhome.gallery;
 
 import com.woori.myhome.common.BaseDto;
 
-public class BoardDto extends BaseDto{
+public class GalleryDto extends BaseDto{
+
 	private String id ="";
 	private String title="";
 	private String writer="";
-	private String contents="";
+	private String comment="";
 	private String wdate="";
+	private String delyn="";
 	
-	public BoardDto() {}
-	public BoardDto(String id, String title, String writer, String contents, String wdate) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.writer = writer;
-		this.contents = contents;
-		this.wdate = wdate;
-	}
+	
 	
 	
 	public String getId() {
@@ -38,11 +32,11 @@ public class BoardDto extends BaseDto{
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getContents() {
-		return contents;
+	public String getComment() {
+		return comment;
 	}
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	public String getWdate() {
 		return wdate;
@@ -50,6 +44,16 @@ public class BoardDto extends BaseDto{
 	public void setWdate(String wdate) {
 		this.wdate = wdate;
 	}
+	public String getDelyn() {
+		return delyn;
+	}
+	public void setDelyn(String delyn) {
+		this.delyn = delyn;
+	}
 	
+	
+	
+	
+
 	
 }

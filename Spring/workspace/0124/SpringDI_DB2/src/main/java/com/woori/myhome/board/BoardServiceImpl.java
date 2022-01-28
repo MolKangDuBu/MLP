@@ -37,4 +37,16 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.getTotal(dto);
 	}
 
+	@Override
+	public void delete(String id) {
+		// TODO Auto-generated method stub
+		boardDao.delete(id);
+	}
+
+	@Override
+	public void update(BoardDto dto) {
+		// TODO Auto-generated method stub
+		boardDao.update(dto);
+	}
+
 }

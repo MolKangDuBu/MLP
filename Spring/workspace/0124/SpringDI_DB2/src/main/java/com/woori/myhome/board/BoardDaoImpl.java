@@ -36,5 +36,19 @@ public class BoardDaoImpl implements BoardDao{
 		// TODO Auto-generated method stub
 		return sm.selectOne("Board_getTotal", dto);
 	}
+
+	@Override
+	public void delete(String id) {
+		// TODO Auto-generated method stub
+		sm.delete("Board_delete", id);
+	}
+
+	@Override
+	public void update(BoardDto dto) {
+		// TODO Auto-generated method stub
+		sm.update("Board_modify", dto);
+	}
+	
+	
 	
 }
