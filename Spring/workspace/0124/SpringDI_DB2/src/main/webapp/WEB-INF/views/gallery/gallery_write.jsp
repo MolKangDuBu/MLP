@@ -19,7 +19,7 @@
    GalleryDto dto = (GalleryDto)request.getAttribute("galleryDto");
    %>
 
-   <form  name="myform" action="<%=request.getContextPath()%>/board/save" method="post">
+   <form  name="myform" method="post" enctype = "multipart/form-data">
       <input type="hidden" name="id" value="<%=dto.getId()%>" />
       
     <div class="container" style="margin-top:80px">
@@ -40,24 +40,35 @@
                         placeholder="제목을 입력하세요" value="<%=dto.getTitle()%>">
                     </div>
                 </td>
-              </tr>       
+              </tr>      
               <tr>
                 <td>작성자</td>
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
                         <input type="text" class="form-control" id="writer" name="writer" 
-                        placeholder="이름을 입력하세요" value="<%=dto.getWriter()%>">
+                        placeholder="작성자를 입력하세요" value="<%=dto.getWriter()%>">
                     </div>
                 </td>
-              </tr>      
+              </tr>       
+             
               <tr>
                 <td>내용</td>
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
-                      <textarea class="form-control" rows="5" id="contents" name="contents"><%=dto.getComment()%></textarea>
+                      <textarea class="form-control" rows="5" id="comment" name="comment"><%=dto.getComment()%></textarea>
                     </div>
                 </td>
-              </tr>          
+              </tr> 
+              
+               <tr>
+                <td>이미지</td>
+                <td>
+                    <div class="mb-3" style="margin-top:13px;">
+                        <input type="file" class="form-control" id="upload" name="upload" 
+                        placeholder="이미지를 업로드하세요" value="<%=dto.getWriter()%>">
+                    </div>
+                </td>
+              </tr>               
             </tbody>
           </table>
        
@@ -89,14 +100,14 @@ function goWrite()
       return false;
    }
    
-   if( frm.contents.value.trim().length<10)
-   {
-      alert("내용을 10글자 이상 작성하세요");
-      frm.contents.focus();
-      return false;
+   
+   if(frm.comment.value.trim().length<10){
+	   alert("내용을 10글자 이상 작성하세요");
+	      frm.comment.focus();
+	      return false;
    }
 
-   frm.action="<%=request.getContextPath()%>/board/save";
+   frm.action="<%=request.getContextPath()%>/gallery/save";
    frm.method="post";
    frm.submit(); //서버로 전송하기 
    

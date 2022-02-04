@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Score">
+	<!-- 쿼리를 XML로 작성하고 id:식별값 parameterType : 우리가 전달할값 
+		 resultType : 받아오는 값-->
+		 
+	<!-- 맵 만들기  -->
+		 
+	<select id="Score_getlist" parameterType="ScoreDto"	
+						resultType="ScoreDto">
+ 		select
+			A.id
+			,A.name
+			,A.kor
+			,A.mat 
+			,A.eng
+			,A.science
+			from score A
+
+	</select>
+	
+	<insert id= "Score_insert">
+		insert into score
+		(name, kor, eng, mat, science)
+		values(#{name}, #{kor}, #{eng}, #{mat}, #{science})
+	</insert>
+	
+	<select id = "Score_getView" parameterType = "String" resultType = "ScoreDto">
+		select
+			A.name
+			,A.kor
+			,A.mat 
+			,A.eng
+			,A.science
+			from score A where id= #{id}	
+	</select>
+</mapper>
