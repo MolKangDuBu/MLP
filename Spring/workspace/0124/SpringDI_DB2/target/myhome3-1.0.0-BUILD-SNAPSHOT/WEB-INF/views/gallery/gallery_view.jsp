@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.woori.myhome.board.*" %>
+<%@page import="com.woori.myhome.gallery.*" %>
 <%@page import="com.woori.myhome.common.*" %>
 
 <!DOCTYPE html>
@@ -21,10 +21,10 @@
 	String key = StringUtil.nullToValue(request.getParameter("key"), "1");
 	String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
-	int totalCnt = (Integer)request.getAttribute("totalCnt");
+	int totalCnt = (Integer)request.getAttribute("totalcnt");
 	%>
 	<%
-	BoardDto dto = (BoardDto)request.getAttribute("boardDto");
+	GalleryDto dto = (GalleryDto)request.getAttribute("galleryDto");
 	%>
 	
 	<form name = "myform">
@@ -52,8 +52,13 @@
                 <th colspan="4">내용</td>
               </tr>
               <tr>
-                <td colspan="6">             
-					<%=dto.getContents().replaceAll("\n", "<br/>")%>
+                <td colspan="4">             
+					<%=dto.getComment().replaceAll("\n", "<br/>")%>
+                </td>
+              </tr>
+                 <tr>
+                <td colspan="4">             
+					<img src ="../upload/<%=dto.getImage()%>"/>
                 </td>
               </tr>
             </tbody>
@@ -76,20 +81,20 @@
 <script>
 	function goList(){
 		var frm = document.myform;
-		frm.action = "<%=request.getContextPath()%>/board/list";
+		frm.action = "<%=request.getContextPath()%>/gallery/list";
 		frm.submit();
 	}
 	
 	function goModify(){
 		var frm = document.myform;
-		frm.action = "<%=request.getContextPath()%>/board/modify";
+		frm.action = "<%=request.getContextPath()%>/gallery/modify";
 		frm.submit();
 	}
 
 	function goDelete(){
 		if(confirm("삭제하시겠습니까?")){
 			var frm = document.myform;
-			frm.action = "<%=request.getContextPath()%>/board/delete";
+			frm.action = "<%=request.getContextPath()%>/gallery/delete";
 			frm.submit();	
 		}
 		

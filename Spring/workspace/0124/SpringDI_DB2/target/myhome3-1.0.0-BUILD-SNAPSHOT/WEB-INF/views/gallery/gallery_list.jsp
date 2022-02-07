@@ -21,8 +21,10 @@
 	String key = StringUtil.nullToValue(request.getParameter("key"), "1");
 	String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
-	int totalCnt = 120;//(Integer)request.getAttribute("totalCnt");
+	int totalCnt = (Integer)request.getAttribute("totalcnt");
+	List<GalleryDto>list = (List<GalleryDto>)request.getAttribute("galleryList");
 %>
+
 <%@include file="../include/nav.jsp" %>
 
 <form name = "myform" method = "get">
@@ -50,55 +52,28 @@
 
         <div class="row">
               <!-- 한행시작 -->
+              <%for (GalleryDto dto : list){ %>
             <div class="col-sm-3">
               <div class="thumbnail">
-                <a href="./images/lights.jpg" target="_blank">
-                  <img src="../resources/Images/lights.jpg" alt="Lights" style="width:100%">
+                <a href="../upload/<%=dto.getImage() %>" target="_blank">
+                  <img src="../upload/<%=dto.getImage() %>" alt="Lights" style="width:100%">
                   <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                   <a href="#none" onclick = "goView('<%=dto.getId()%>')"> <p><%=dto.getComment() %></p></a>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="thumbnail">
-                <a href="../resources/Images/nature.jpg" target="_blank">
-                  <img src="../resources/Images/nature.jpg" alt="Nature" style="width:100%">
-                  <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="thumbnail">
-                <a href="../resources/Images/fjords.jpg" target="_blank">
-                  <img src="../resources/Images/fjords.jpg" alt="Fjords" style="width:100%">
-                  <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="thumbnail">
-                  <a href="../resources/Images/lights.jpg" target="_blank">
-                    <img src="../resources/Images/lights.jpg" alt="Lights" style="width:100%">
-                    <div class="caption">
-                      <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+           <%} %>
+  
              <!-- 한행종료 -->
           </div>
 
      	<div class ="container mt-3" style ="text-align:right">
-     		<%=Pager.makeTag(request, 10, totalCnt) %>
+     		<%=Pager.makeTag(request, 12, totalCnt) %>
      	</div>
        
           <div class="container mt-3" style="text-align:right;">
-            <a href="<%=request.getContextPath()%>/board/write" 
+            <a href="<%=request.getContextPath()%>/gallery/write" 
                class="btn btn-secondary">글쓰기</a>
           </div>
          
@@ -125,7 +100,7 @@
 	function gosearch(){
 		let frm = document.myform;
 		frm.pg.value=0;
-		frm.action = "<%=request.getContextPath()%>/board/list";
+		frm.action = "<%=request.getContextPath()%>/gallery/list";
 		frm.method ="GET";
 		frm.submit();
 	}
@@ -134,7 +109,7 @@
 		frm = document.myform;
 		frm.pg.value = pg;
 		frm.method = "get";
-		frm.action = "${pageContext.request.contextPath}/board/list";
+		frm.action = "${pageContext.request.contextPath}/gallery/list";
 		frm.submit();
 	}
 	
@@ -142,7 +117,7 @@
 		frm = document.myform;
 		frm.id.value = id;
 		frm.method = "get";
-		frm.action = "${pageContext.request.contextPath}/board/view";
+		frm.action = "${pageContext.request.contextPath}/gallery/view";
 		frm.submit();
 	}
 </script>
