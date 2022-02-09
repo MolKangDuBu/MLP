@@ -114,6 +114,7 @@
          ,A.writer
          ,A.contents 
          ,A.wdate
+         ,(select username from member B where B.userid = A.writer)as username
       from board A where id=#{id}
 
    </select>

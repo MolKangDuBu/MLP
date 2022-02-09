@@ -24,4 +24,25 @@ public class CommentDaoImpl implements CommentDao{
 		return sm.selectList("Comment_list", dto);
 	}
 
+	@Override
+	public CommentDto comment_getView(CommentDto dto) {
+		// TODO Auto-generated method stub
+		return sm.selectOne("Comment_getView", dto);
+	}
+
+	@Override
+	public void comment_delete(CommentDto dto) {
+		// TODO Auto-generated method stub
+		sm.delete("Comment_delete", dto);
+	}
+
+	@Override
+	public void comment_update(CommentDto dto) {
+		// TODO Auto-generated method stub
+		sm.update("Comment_update", dto);
+	}
+
+
+
+
 }

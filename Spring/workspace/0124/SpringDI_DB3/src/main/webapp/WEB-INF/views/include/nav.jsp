@@ -29,6 +29,9 @@ String phone= StringUtil.nullToValue(session.getAttribute("phone"), "");
              <a class="nav-link" href="${commonURL}/member/login">로그인</a>
            </li>
            <%}else{%>
+           <li class="nav-item">
+             <a class="nav-link" href="${commonURL}/member/myinfo">내정보</a>
+           </li>
             <li class="nav-item">
              <a class="nav-link" href="${commonURL}/member/logout">로그아웃</a>
            </li>

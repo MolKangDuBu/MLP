@@ -41,7 +41,7 @@
               </tr>
               <tr >
                 <th >작성자</th>
-                <td><%=dto.getWriter()%></td>
+                <td><%=dto.getUsername()%></td>
                 <th>작성일</th>
                 <td><%=dto.getWdate()%></td>
        
@@ -61,8 +61,10 @@
        
           <div class="container mt-3" style="text-align:right;">
             <a href="#none" onclick="goList()" class="btn btn-secondary">목록</a>
+            <%if(userid.equals(dto.getWriter())){ %>
             <a href="#none" onclick="goModify()" class="btn btn-secondary">수정</a>
             <a href="#none" onclick="goDelete()" class="btn btn-secondary">삭제</a>
+          	<%} %>
           </div>
           
           
@@ -78,25 +80,21 @@
             </tr>
           </thead>
           <tbody >
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-            </tr>
-      
+          
           </tbody>
         </table>
           
             <input type="hidden" name="userid" id="userid" value="<%=userid%>" />
-            <input type="text" name="board_id" id="board_id" value="<%=dto.getId()%>" />
-            
+            <input type="hidden" name="board_id" id="board_id" value="<%=dto.getId()%>" />
+            <input type="hidden" name="comment_id" id="comment_id" value="" />
             <div class="mb-3" style="margin-top:13px;">
                <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
             </div>
             
-            <div class="container mt-3" style="text-align:right;">
-               <a href="#none" onclick="goCommentWrite()" class="btn btn-primary">댓글등록</a>
+            <div class="container mt-3" style="text-align:right;" id = "btnRegister">
+               <a href="#none" onclick="goCommentWrite()" class="btn btn-primary"><span id ="btnCommentSave">댓글등록</span></a>
             </div>
+     
     </div>
     
   
@@ -146,7 +144,33 @@ function goInit()
       dataType:"JSON"
    })
    .done( (result)=>{
-         console.log( result );
+       //데이터를 배열형태로 전달받음 
+//       $("#tbl_comment>tbody:last").remove();
+       for(i=$("#tbl_comment tr").length-2; i>=0; i--){
+    	   $("#tbl_comment tr:last").remove();
+    	   
+       }
+       var userid ='<%=userid%>';
+       var i=1;
+	   result.forEach((item)=>{
+			var data = "<tr>";
+		 		data += "<td>"+i+"</td>";
+		   		data += "<td>"+item.comment+"</td>";
+		   		if(userid ==item.userid)
+		   			data+= "<td>"+item.username
+		   				+"&nbsp<button type = 'button' onclick=goCommentModify('"+item.id+"')>수정</button>"
+		   				+"&nbsp<button type = 'button' onclick=goCommentDelete('"+item.id+"')>삭제</button>"
+		   				+"</td>"
+		   		
+		   		else
+		   			data +="<td>"+item.username+"</td>";
+		   		
+		   		data += "</tr>";
+		   		i++;
+		   console.log(data);
+        	$("#tbl_comment>tbody:last").append(data);
+        })
+      
    })
    .fail( (error)=>{
       console.log(error);
@@ -155,6 +179,12 @@ function goInit()
 
 function goCommentWrite()
 {
+	var userid ='<%=userid%>';
+	if(userid == ""){
+		alert("로그인하세요");
+		location.href="${commonURL}/member/login";
+	}
+	
    var frmData = new FormData(document.myform);
      console.log( frmData );
    $.ajax({
@@ -165,7 +195,66 @@ function goCommentWrite()
       type:"POST",
    })
    .done( (result)=>{
-         goInit();
+	   $("#comment").val("");
+	   $("#btnCommentSave").html("답글등록");
+	   $("#comment_id").val("");
+       goInit();
+   })
+   .fail( (error)=>{
+      console.log(error);
+   })
+}
+
+
+function goCommentModify(comment_id)
+{
+	
+	var userid ='<%=userid%>';
+	$("#comment_id").val(comment_id);
+	if(userid == ""){
+		alert("로그인하세요");
+		location.href="${commonURL}/member/login";
+	}
+
+   $.ajax({
+      url:"${commonURL}/comment/getView?id="+comment_id,
+
+      type:"GET",
+      dataType :"json"
+   })
+   .done( (result)=>{
+	   $("#comment").val(result.comment);
+	   $("#btnCommentSave").html("저장");
+     
+   })
+   .fail( (error)=>{
+      console.log(error);
+   })
+}
+
+function goCommentDelete(comment_id)
+{
+	var userid ='<%=userid%>';
+	$("#comment_id").val(comment_id);
+	if(userid == ""){
+		alert("로그인하세요");
+		location.href="${commonURL}/member/login";
+	}
+	if(!confirm("삭제하시겠습니까?"))
+		return false;
+   var frmData = new FormData(document.myform);
+     console.log( frmData );
+   $.ajax({
+      url:"${commonURL}/comment/delete",
+      data:frmData,
+      contentType:false,
+      processData:false,
+      type:"POST",
+   })
+   .done( (result)=>{
+	   $("#comment").val("");
+	   $("#comment_id").val("");
+       goInit();
    })
    .fail( (error)=>{
       console.log(error);

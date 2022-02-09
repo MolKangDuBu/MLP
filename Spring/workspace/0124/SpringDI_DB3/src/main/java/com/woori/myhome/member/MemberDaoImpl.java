@@ -46,6 +46,12 @@ public class MemberDaoImpl implements MemberDao{
 		// TODO Auto-generated method stub
 		return sm.selectOne("Member_findpassword", dto);
 	}
+
+	@Override
+	public void member_update(MemberDto dto) {
+		// TODO Auto-generated method stub
+		sm.update("Member_update", dto);
+	}
 	
 	
 	

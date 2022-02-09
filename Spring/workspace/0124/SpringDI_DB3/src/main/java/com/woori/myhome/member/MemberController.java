@@ -4,9 +4,11 @@ import java.util.HashMap;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,10 +20,29 @@ public class MemberController {
 	MemberService memberService;
 	
 	@RequestMapping("/member/join")
-	String member_register() {
+	String member_register(Model model) {
+		
+		MemberDto dto = new MemberDto();
+		model.addAttribute("memberDto", dto);
 		return "member/member_register";
 	}
 	
+	@RequestMapping("/member/myinfo")
+	String member_myinfo(Model model,HttpServletRequest request, HttpServletResponse response) {
+		
+		HttpSession session = request.getSession();
+		String userid =(String) session.getAttribute("userid");
+		if(userid ==null)
+			return "reditect:/member/login";
+		
+		MemberDto dto = new MemberDto();
+		dto.setUserid(userid);
+		
+		MemberDto resultdto = memberService.getInfo(dto);
+		
+		model.addAttribute("memberDto", resultdto);
+		return "member/member_register";
+	}
 	
 	@RequestMapping("/member/isDuplicate")
 	@ResponseBody //Ajax 요청시 데이터가 출력됨, jsp 이동을 막는 역할
@@ -37,10 +58,21 @@ public class MemberController {
 	
 	@RequestMapping(value = "/member/insert",method = RequestMethod.POST)
 	@ResponseBody
-	public HashMap<String, String>member_insert(MemberDto dto){
-		memberService.insert(dto);
+	public HashMap<String, String>member_insert(MemberDto dto, HttpServletRequest request){
+		HttpSession session = request.getSession();
+		String userid =(String) session.getAttribute("userid");
 		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("result", "success");
+		if(userid ==null) {
+			memberService.insert(dto);
+			map.put("result", "1");
+			
+		}else {
+			memberService.member_update(dto);
+			map.put("result", "2");
+		}
+		
+		
+		
 		return map;
 	}
 	
@@ -133,4 +165,8 @@ public class MemberController {
 		
 		return map;
 	}
+	
+
+	
+
 }

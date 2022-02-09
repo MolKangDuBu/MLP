@@ -11,9 +11,6 @@
         
    <!-- if test="key=='1'"  - 이렇게 쓰면 안된다 인식안된다 -->
   
-
-
-
    
    <insert id="Comment_insert" parameterType="CommentDto">
       insert into tb_comment
@@ -29,8 +26,27 @@
    	left outer join member B on A.userid = B.userid
    	where board_id =#{board_id}
    </select>
-  
+
+   
+    <select id = "Comment_getView" parameterType="CommentDto" resultType = "CommentDto">
+   select
+   	A.userid, comment, A.wdate, A.id, username
+   	from tb_comment A
+   	left outer join member B on A.userid = B.userid
+   	where A.id =#{id}
+   </select>
+   
+   <update id = "Comment_update" parameterType="CommentDto">
+   	update tb_comment 
+   	set comment = #{comment} 
+   	where id = #{comment_id}
+   </update>
+   
+   <delete id = "Comment_delete"  parameterType="CommentDto">
+   	delete from tb_comment A where A.id =#{comment_id}
+   </delete>
    
    
+
    
 </mapper>

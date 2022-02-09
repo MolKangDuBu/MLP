@@ -34,5 +34,10 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return memberDao.findPassword(dto);
 	}
+	@Override
+	public void member_update(MemberDto dto) {
+		// TODO Auto-generated method stub
+		memberDao.member_update(dto);
+	}
 
 }

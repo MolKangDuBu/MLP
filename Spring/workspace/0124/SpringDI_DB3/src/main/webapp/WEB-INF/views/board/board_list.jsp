@@ -72,7 +72,7 @@
               <tr>
                 <td><%=totalCnt - tempDto.getRnum()+1%></td>
                 <td><a href="#none" onclick = "goView('<%=tempDto.getId()%>')"><%=tempDto.getTitle()%></a></td>
-                <td><%=tempDto.getWriter()%></td>
+                <td><%=tempDto.getUsername()%></td>
                 <td><%=tempDto.getWdate()%></td>
               </tr>
             <%}%>

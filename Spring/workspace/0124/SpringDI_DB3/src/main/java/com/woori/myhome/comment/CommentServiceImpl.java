@@ -22,5 +22,20 @@ public class CommentServiceImpl implements CommentService{
 		// TODO Auto-generated method stub
 		return commentdao.getList(dto);
 	}
+	@Override
+	public void comment_delete(CommentDto dto) {
+		// TODO Auto-generated method stub
+		commentdao.comment_delete(dto);
+	}
+	@Override
+	public void comment_update(CommentDto dto) {
+		// TODO Auto-generated method stub
+		commentdao.comment_update(dto);
+	}
+	@Override
+	public CommentDto comment_getView(CommentDto dto) {
+		// TODO Auto-generated method stub
+		return commentdao.comment_getView(dto);
+	}
 
 }

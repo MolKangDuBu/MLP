@@ -6,4 +6,5 @@ public interface MemberService {
 	MemberDto getInfo(MemberDto dto);
 	MemberDto findId(MemberDto dto);
 	MemberDto findPassword(MemberDto dto);
+	void member_update(MemberDto dto);
 }

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 
+
+
 @Controller
 public class CommentController {
 	@Resource(name = "commentService")
@@ -20,7 +22,14 @@ public class CommentController {
 	@RequestMapping(value = "/comment/insert")
 	@ResponseBody
 	public HashMap<String, String>member_insert(CommentDto dto){
-		service.insert(dto);
+		System.out.println("comment_id : "+dto.getComment_id());
+		if(dto.getComment_id().equals("")) {
+			service.insert(dto);
+		}else {
+			service.comment_update(dto);
+		}
+			
+		
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("result", "success");
 		return map;
@@ -32,4 +41,25 @@ public class CommentController {
 		List<CommentDto> list = service.getList(dto);
 		return list;
 	}
+	
+	@RequestMapping(value = "/comment/getView")
+	@ResponseBody
+	public CommentDto comment_getView(CommentDto dto){
+		System.out.println("id : "+dto.getId());
+		CommentDto resultDto = service.comment_getView(dto);
+		return resultDto;
+	}
+	
+
+	
+	@RequestMapping(value = "/comment/delete")
+	@ResponseBody
+	public HashMap<String, String> comment_delete(CommentDto dto){
+		service.comment_delete(dto);
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("result", "success");
+		return map;
+	}
+	
+
 }
