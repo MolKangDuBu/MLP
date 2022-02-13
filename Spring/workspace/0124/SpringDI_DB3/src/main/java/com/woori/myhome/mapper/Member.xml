@@ -82,10 +82,10 @@
    	where email = #{email} and userid = #{userid}
    </select>
    
-   <update id= "Member_update">
+   <update id= "Member_update" parameterType = "MemberDto">
    	 	update member
- 	  	set email = #{email},
-			wdate = now(),
+ 	  	set password = #{password},
+ 	  		email = #{email},
 			nickname= #{nickname},
 			phone= #{phone},
 			zipcode = #{zipcode},

@@ -1,2 +1,3 @@
-# MLP
-## 멀티캠퍼스 지능형 웹 서비스 풀스택 개발 코드입니다.
+version https://git-lfs.github.com/spec/v1
+oid sha256:767b906bf0ac5c86ca909c4000a839780875428cca46ca2c79bac08bf7920274
+size 85

@@ -145,7 +145,7 @@ function goWrite()
 {
    var frmData = new FormData(document.myform);
    console.log( frmData );
-      
+   
    $.ajax({
       url:"${commonURL}/member/insert",
       data:frmData,
