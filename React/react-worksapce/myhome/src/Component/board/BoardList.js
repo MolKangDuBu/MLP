@@ -16,11 +16,11 @@ const BoardList = () => {
         //     { id: 4, name: "345", email: "ddd@naver.com" },
         //     { id: 5, name: "45", email: "fff@naver.com" }
         // ]);
-        let url = "http://localhost:3000/guestbook";
+        let url = "http://localhost:8080/board/list";
         axios.get(url)
         .then((response)=>{
-            console.log(response.data.data);
-            setBoard(...board, response.data.data);
+            console.log(response.data);
+            setBoard(...board, response.data);
         })
         .catch((error)=>{
             console.log(error);
