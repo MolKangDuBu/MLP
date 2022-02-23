@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+
+    <!-- render  함수에 두가지 인자 첫번째 인자는 태그 또는 컴포넌트, 두번째 인자는 앞의 컴포넌트를 출력할 태그 
+    태그 구조가 반드시 트리 형태이어야 한다 
+       <div>
+           <h1>Hello, world</h1>
+       </div>     
+    -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        ReactDOM.render( 
+            <h1>Hello, world</h1>, //부모 태그에 나타날 태그들
+            document.getElementById('root') // 부모 태그 정보
+        );
+    </script>
+
+</body>
+</html>
+
+
+

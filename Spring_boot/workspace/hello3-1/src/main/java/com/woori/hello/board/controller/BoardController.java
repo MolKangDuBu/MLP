@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,9 +37,11 @@ public class BoardController {
 	}
 	
 	// Map -> HashMap의 추상클래스 
+	//axios가 json으로 보내는데 json을 받기 위해서는 @RequestBody가 있어야함
 	@RequestMapping("/board/insert")
-	Map<String, String> getView(BoardDto dto)
-	{		
+	Map<String, String> getView(@RequestBody BoardDto dto)
+	{	
+		System.out.println(dto.getTitle());
 		boardService.insert(dto);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("result", "success");

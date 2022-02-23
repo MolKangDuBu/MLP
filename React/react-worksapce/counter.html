@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="counter">0</h3>
+
+    <button type="button" id="btnAdd">+</button>&nbsp;&nbsp;
+    <button type="button" id="btnSub">-</button>
+</body>
+</html>
+
+<script>
+    number = document.getElementById("counter");//////////////
+    btnAdd = document.getElementById("btnAdd");
+    btnSub = document.getElementById("btnSub");
+    
+    btnAdd.onclick=()=>{
+        number.innerHTML = parseInt(number.innerHTML) + 1;
+    } 
+
+    btnSub.onclick=()=>{
+        number.innerHTML = parseInt(number.innerHTML) - 1;
+    }
+
+</script>
